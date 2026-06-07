@@ -169,9 +169,17 @@ footer{border-top:1px solid var(--border);padding:28px 0}
 /* ── RESPONSIVE ── */
 
 /* ── TABLET (≤1024px) ── */
+/* Desktop: show desktop photo, hide mobile photo */
+.hero-photo-mobile{display:none}
+.hero-photo-desktop{display:block}
+
 @media(max-width:1024px){
   /* Hide cert badge in nav — it breaks layout at tablet widths */
   .nav-cert-badge{display:none}
+
+  /* Show mobile photo (inside hero-left), hide desktop photo (outside) */
+  .hero-photo-mobile{display:block}
+  .hero-photo-desktop{display:none}
 
   .hero-top{
     grid-template-columns:1fr;
@@ -190,7 +198,7 @@ footer{border-top:1px solid var(--border);padding:28px 0}
   }
   .photo-frame{
     max-width:300px;
-    margin:0 auto;
+    margin:0 auto 24px;
   }
   .hero-cert-full{
     margin-top:20px;
@@ -206,9 +214,12 @@ footer{border-top:1px solid var(--border);padding:28px 0}
 /* ── LARGE MOBILE / SMALL TABLET (≤840px) ── */
 @media(max-width:840px){
   nav .nav-links{display:none}
-  .hero-cert-full{flex-direction:column;align-items:flex-start;padding:20px}
-  .hcf-right{justify-content:flex-start}
-  .hero-photo-col{display:flex;justify-content:center}
+  .hero-cert-full{flex-direction:column;align-items:center;text-align:center;padding:20px}
+  .hcf-left{flex-direction:column;align-items:center;text-align:center}
+  .hcf-right{justify-content:center;width:100%}
+  .hero-photo-desktop{display:none}
+  .hero-photo-mobile{display:block}
+  .hero-photo-col{justify-content:center}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .stat-item:nth-child(2){border-right:none}
   .stat-item{border-bottom:1px solid var(--border)}
@@ -233,7 +244,9 @@ footer{border-top:1px solid var(--border);padding:28px 0}
   .hero-sub{font-size:18px;line-height:1.65}
   .hero-actions{flex-direction:column;width:100%}
   .hero-actions a{width:100%;justify-content:center}
-  .photo-frame{max-width:260px;margin:10px auto 0}
+  .photo-frame{max-width:260px;margin:10px auto 24px}
+  .hero-photo-desktop{display:none}
+  .hero-photo-mobile{display:block}
 
   /* Certification strip */
   .hero-cert-full{padding:18px;border-radius:14px}
@@ -507,12 +520,17 @@ footer{border-top:1px solid var(--border);padding:28px 0}
         <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Expert · Available Now</div>
         <h1>Hi, I'm <em>Rohit</em> —<br>GHL Certified Admin</h1>
         <p class="hero-sub">I build <strong>complete business systems</strong> on GoHighLevel — automations, funnels, AI agents, CRM setups and white-label agency solutions that actually work.</p>
+        <div class="hero-photo-col hero-photo-mobile">
+          <div class="photo-frame">
+            <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+          </div>
+        </div>
         <div class="hero-actions">
           <a href="#contact" class="btn-dark">Work With Me →</a>
           <a href="#services" class="btn-outline">See My Services</a>
         </div>
       </div>
-      <div class="hero-photo-col">
+      <div class="hero-photo-col hero-photo-desktop">
         <div class="photo-frame">
           <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
         </div>
