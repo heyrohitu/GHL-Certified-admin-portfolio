@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Upadhyay — GoHighLevel Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#ffffff;
+  --off:#f7f7f5;
+  --off2:#f0eeeb;
+  --border:#e5e2dc;
+  --border2:#d0cdc7;
+  --text:#1a1917;
+  --muted:#4a4845;
+  --muted2:#6e6b64;
+  --accent:#1a6b4a;
+  --accent-l:#e8f4ee;
+  --accent-m:#2d9467;
+  --blue:#1a4a8a;
+  --blue-l:#e8eef8;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── LAYOUT ── */
+.container{max-width:1040px;margin:0 auto;padding:0 32px}
+
+/* ── NAV ── */
+header{border-bottom:1px solid var(--border);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--border2)}
+.nav-name{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:15px;color:var(--muted);padding:6px 14px;border-radius:6px;text-decoration:none;transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--text);background:var(--off)}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--text);color:var(--white);font-size:14px;font-weight:500;padding:9px 20px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+.dot-live{width:6px;height:6px;background:var(--accent-m);border-radius:50%;position:relative}
+.dot-live::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--accent-m);animation:ripple 2s ease infinite}
+
+/* ── HERO ── */
+.hero{padding:48px 0 56px}
+.hero-top{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;margin-bottom:28px}
+.hero-left{}
+.hero-photo-col{}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;margin-bottom:28px}
+.hero-tag .tag-dot{width:5px;height:5px;background:var(--accent-m);border-radius:50%}
+h1{font-size:clamp(40px,5.5vw,62px);font-weight:600;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:20px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:20px;font-weight:400;color:var(--muted);line-height:1.7;max-width:500px;margin-bottom:40px}
+.hero-sub strong{font-weight:500;color:var(--text)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:var(--white);font-size:15px;font-weight:500;padding:13px 26px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-dark:hover{opacity:.82}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-size:15px;font-weight:500;padding:12px 26px;border-radius:8px;border:1px solid var(--border2);text-decoration:none;transition:border-color .2s,background .2s}
+.btn-outline:hover{border-color:var(--border2);background:var(--off)}
+.photo-frame{width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative;background:var(--off)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-cert-full{width:100%;background:var(--white);border:1.5px solid rgba(26,107,74,.22);border-radius:16px;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 20px rgba(26,107,74,.08);position:relative;overflow:hidden}
+.hero-cert-full::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#34c98a,rgba(26,107,74,.15))}
+.hcf-left{display:flex;align-items:center;gap:20px}
+.hcf-badge-img{width:72px;height:72px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 10px rgba(0,148,103,.3))}
+.hcf-eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.hcf-title{font-size:21px;font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.2;margin-bottom:3px}
+.hcf-meta{font-size:15px;color:var(--muted)}
+.hcf-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.hcf-verified{display:inline-flex;align-items:center;gap:7px;background:var(--accent-l);border:1px solid rgba(26,107,74,.22);border-radius:20px;padding:8px 18px;font-size:14px;font-weight:600;color:var(--accent)}
+.hcf-dir-link{display:inline-flex;align-items:center;gap:7px;background:var(--text);color:var(--white);border-radius:8px;padding:9px 18px;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s}
+.hcf-dir-link:hover{opacity:.82}
+
+/* ── STATS ── */
+.stats-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:28px 24px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-size:34px;font-weight:600;letter-spacing:-.04em;color:var(--text);line-height:1;margin-bottom:5px}
+.stat-n span{color:var(--accent)}
+.stat-l{font-size:15px;color:var(--muted)}
+
+/* ── SECTIONS ── */
+section{padding:88px 0}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-family:var(--mono)}
+h2{font-size:clamp(30px,3.5vw,40px);font-weight:600;letter-spacing:-.025em;color:var(--text);line-height:1.15;margin-bottom:16px}
+.section-sub{font-size:19px;font-weight:400;color:var(--muted);max-width:560px;line-height:1.75}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:48px}
+.svc-card{background:var(--white);padding:32px 28px;transition:background .2s}
+.svc-card:hover{background:var(--off)}
+.svc-icon{font-size:24px;margin-bottom:16px;line-height:1}
+.svc-name{font-size:17px;font-weight:600;color:var(--text);margin-bottom:8px}
+.svc-desc{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ── SHOWCASE ── */
+.showcase-section{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.showcase-inner{padding:88px 0}
+.video-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:48px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.video-meta{padding:24px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.video-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-l);border:1px solid rgba(26,74,138,.15);border-radius:20px;padding:4px 12px;font-size:13px;font-weight:500;color:var(--blue)}
+.video-title{font-size:16px;font-weight:500;color:var(--text);margin-top:4px}
+.video-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;padding:8px 16px;border:1px solid rgba(26,107,74,.25);border-radius:7px;transition:background .2s}
+.video-link:hover{background:var(--accent-l)}
+
+/* ── CERT SECTION ── */
+.cert-section-block{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:40px 44px;display:flex;align-items:center;gap:36px;margin-top:48px}
+.cert-section-block img.cert-img{width:100px;height:100px;object-fit:contain;flex-shrink:0}
+.cert-divider{width:1px;height:80px;background:var(--border);flex-shrink:0}
+.cert-body-text h3{font-size:21px;font-weight:600;color:var(--text);margin-bottom:8px}
+.cert-body-text p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px}
+.cert-tags{display:flex;gap:8px;flex-wrap:wrap}
+.ctag{font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px}
+.ctag-g{background:var(--accent-l);color:var(--accent);border:1px solid rgba(26,107,74,.18)}
+.ctag-b{background:var(--blue-l);color:var(--blue);border:1px solid rgba(26,74,138,.15)}
+
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:48px}
+.p-step{background:var(--white);padding:32px 24px;transition:background .2s}
+.p-step:hover{background:var(--off)}
+.p-num{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.1em;margin-bottom:16px}
+.p-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px}
+.p-desc{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ── TECH ── */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.chip{font-size:15px;font-weight:400;color:var(--text);background:var(--off);border:1px solid var(--border);border-radius:7px;padding:9px 18px;transition:border-color .2s,background .2s;cursor:default}
+.chip:hover{background:var(--white);border-color:var(--border2)}
+.chip.featured{background:var(--accent-l);border-color:rgba(26,107,74,.22);color:var(--accent);font-weight:500}
+
+/* ── CTA ── */
+.cta-section{background:var(--text);color:var(--white);padding:88px 0}
+.cta-section .section-label{color:rgba(255,255,255,.4)}
+.cta-section h2{color:var(--white)}
+.cta-section h2 em{font-style:normal;color:rgba(255,255,255,.5)}
+.cta-section .section-sub{color:rgba(255,255,255,.55)}
+.cta-row{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;flex-wrap:wrap}
+.cta-right{display:flex;flex-direction:column;gap:16px;min-width:260px}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--text);font-size:15px;font-weight:600;padding:14px 28px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-white:hover{opacity:.9}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.85);font-size:15px;font-weight:400;padding:13px 28px;border-radius:8px;border:1px solid rgba(255,255,255,.25);text-decoration:none;transition:border-color .2s,color .2s}
+.btn-ghost-w:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.contact-list li{font-size:15px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px}
+.contact-list a{color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s}
+.contact-list a:hover{color:var(--white)}
+.cl-ico{font-size:14px;opacity:.6}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:28px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:14px;color:var(--muted)}
+.foot-avail{font-size:14px;color:var(--accent);font-weight:500;display:flex;align-items:center;gap:6px}
+.foot-avail::before{content:'';width:6px;height:6px;background:var(--accent-m);border-radius:50%}
+
+/* ── ANIM ── */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@keyframes ripple{0%{transform:scale(1);opacity:1}100%{transform:scale(2.8);opacity:0}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:840px){
+  .hero-cert-full{flex-direction:column;align-items:flex-start;padding:20px 20px}
+  .hcf-right{justify-content:flex-start}
+  .hero-top{grid-template-columns:1fr;gap:28px}
+  .hero-photo-col{display:flex;justify-content:center}
+  .photo-frame{max-width:280px}
+  .hero-top{grid-template-columns:1fr;gap:32px}
+  .hero-right{flex-direction:row;justify-content:center;flex-wrap:wrap}
+  .photo-frame{max-width:240px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item{border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .cert-section-block{flex-direction:column;gap:24px;padding:28px}
+  .cert-divider{width:100%;height:1px}
+  nav .nav-links{display:none}
+  .cta-row{flex-direction:column;gap:32px}
+}
+@media(max-width:520px){
+  .container{padding:0 20px}
+  .hero{padding:64px 0 56px}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+}
+
+.video-thumb-link{display:block;text-decoration:none}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#111}
+.thumb-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.video-thumb-link:hover .thumb-img{transform:scale(1.03)}
+.thumb-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:background .3s}
+.video-thumb-link:hover .thumb-overlay{background:rgba(0,0,0,.5)}
+.play-btn{width:68px;height:68px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.video-thumb-link:hover .play-btn{transform:scale(1.08);background:#fff}
+.play-btn svg{margin-left:4px}
+.thumb-label{font-family:var(--sans);font-size:15px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.01em}
+
+/* HERO BADGE CARD */
+.hero-badge-card{
+  position:relative;
+  width:100%;max-width:320px;
+  background:var(--white);
+  border:1.5px solid rgba(26,107,74,.2);
+  border-radius:20px;
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 4px 24px rgba(26,107,74,.1);
+  overflow:hidden;
+  text-align:center;
+}
+.hbc-glow{
+  position:absolute;
+  top:-60px;left:50%;transform:translateX(-50%);
+  width:220px;height:160px;
+  background:radial-gradient(circle,rgba(26,148,103,.1) 0%,transparent 70%);
+  pointer-events:none;
+  border-radius:50%;
+}
+.hbc-badge-img{
+  width:110px;height:110px;
+  object-fit:contain;
+  flex-shrink:0;
+  filter:drop-shadow(0 3px 12px rgba(0,148,103,.3));
+  mix-blend-mode:multiply;
+}
+.hbc-text{display:flex;flex-direction:column;align-items:center;gap:4px}
+.hbc-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.hbc-title{
+  font-size:17px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin-bottom:5px;
+}
+.hbc-meta{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.hbc-check{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--accent-l);
+  border:1px solid rgba(26,107,74,.2);
+  border-radius:20px;
+  padding:6px 16px;
+  font-size:13px;
+  font-weight:500;
+  color:var(--accent);
+}
+.hbc-tick{font-weight:700}
+
+.hbc-dir-link{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:8px;
+  font-size:13px;font-weight:500;
+  color:var(--blue);
+  text-decoration:none;
+  background:var(--blue-l);
+  border:1px solid rgba(26,74,138,.18);
+  border-radius:20px;
+  padding:5px 14px;
+  transition:background .2s,border-color .2s;
+}
+.hbc-dir-link:hover{background:#dce6f7;border-color:rgba(26,74,138,.35);}
+
+.cert-dir-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;
+  font-size:14px;font-weight:500;
+  color:var(--accent);
+  text-decoration:none;
+  background:var(--accent-l);
+  border:1px solid rgba(26,107,74,.22);
+  border-radius:8px;
+  padding:10px 18px;
+  transition:background .2s,border-color .2s;
+}
+.cert-dir-btn:hover{background:#d4eddf;border-color:rgba(26,107,74,.4);}
+
+.nav-cert-badge{
+  display:flex;align-items:center;gap:9px;
+  background:var(--white);
+  border:1.5px solid rgba(26,107,74,.25);
+  border-radius:10px;
+  padding:6px 14px 6px 8px;
+  box-shadow:0 1px 6px rgba(26,107,74,.1);
+}
+.nav-cert-img{width:32px;height:32px;object-fit:contain;flex-shrink:0}
+.nav-cert-text{}
+.nav-cert-title{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:-.01em;line-height:1.2}
+.nav-cert-sub{font-size:10px;color:var(--muted);line-height:1.2}
+
+/* ── EVENT SECTION ── */
+.event-cred{display:flex;align-items:center;gap:32px;margin-top:28px;padding:20px 28px;background:var(--white);border:1px solid var(--border);border-radius:12px;flex-wrap:wrap}
+.event-cred-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text)}
+.event-cred-item svg{color:var(--accent);flex-shrink:0}
+@media(max-width:720px){
+  .event-cred{flex-direction:column;gap:14px;align-items:flex-start}
+}
+
+/* ── SERVICES STRIP ── */
+.services-strip{background:var(--white);border-bottom:1px solid var(--border);padding:0}
+.ss-inner{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  border-left:1px solid var(--border);
+}
+.ss-item{
+  padding:22px 14px;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;
+  gap:8px;text-align:center;
+  transition:background .2s;
+  cursor:default;
+}
+.ss-item:hover{background:var(--off)}
+.ss-icon{font-size:20px;line-height:1}
+.ss-name{font-size:11px;font-weight:500;color:var(--muted);line-height:1.4;letter-spacing:.01em}
+@media(max-width:900px){
+  .ss-inner{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:520px){
+  .ss-inner{grid-template-columns:repeat(2,1fr)}
+  .ss-item:nth-child(9){border-right:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="nav-brand">
+        <img class="nav-avatar" src="optimized_assets/image_1.webp" alt="Rohit Upadhyay">
+        <span class="nav-name">Rohit Upadhyay</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#cert">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="nav-cert-badge">
+          <img src="optimized_assets/image_2.webp" alt="GHL Certified Admin" class="nav-cert-img">
+          <div class="nav-cert-text">
+            <div class="nav-cert-title">GHL Certified Admin</div>
+            <div class="nav-cert-sub">HighLevel Inc. · 2026</div>
+          </div>
+        </div>
+        <a href="#contact" class="nav-cta">Hire Me →</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-top fade-up">
+      <div class="hero-left">
+        <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Expert · Available Now</div>
+        <h1>Hi, I'm <em>Rohit</em> —<br>GHL Certified Admin</h1>
+        <p class="hero-sub">I build <strong>complete business systems</strong> on GoHighLevel — automations, funnels, AI agents, CRM setups and white-label agency solutions that actually work.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-dark">Work With Me →</a>
+          <a href="#services" class="btn-outline">See My Services</a>
+        </div>
+      </div>
+      <div class="hero-photo-col">
+        <div class="photo-frame">
+          <img src="optimized_assets/image_3.png" alt="Rohit Upadhyay — GHL Expert">
+        </div>
+      </div>
+    </div>
+    <div class="hero-cert-full fade-up" style="transition-delay:.18s">
+      <div class="hcf-left">
+        <img src="optimized_assets/image_4.png" alt="GHL Certified Admin Badge" class="hcf-badge-img">
+        <div class="hcf-text">
+          <div class="hcf-eyebrow">Official Certification</div>
+          <div class="hcf-title">GoHighLevel Certified Admin</div>
+          <div class="hcf-meta">Issued by HighLevel Inc. · 2026</div>
+        </div>
+      </div>
+      <div class="hcf-right">
+        <div class="hcf-verified">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Verified &amp; Active
+        </div>
+        <a href="https://directory.gohighlevel.com/india/indore/certified-admins/rohit-upadhyay" target="_blank" class="hcf-dir-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View on GHL Directory
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item fade-up"><div class="stat-n">500<span>+</span></div><div class="stat-l">Clients Served Globally</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.08s"><div class="stat-n">100<span>%</span></div><div class="stat-l">Certified by GHL</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.16s"><div class="stat-n">9<span>+</span></div><div class="stat-l">Services Offered</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.24s"><div class="stat-n">∞</div><div class="stat-l">Automations Built</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">What I Do</div>
+      <h2>Services &amp; Expertise</h2>
+      <p class="section-sub">From a fresh GHL account to a fully automated business — I handle every layer of your GoHighLevel stack.</p>
+    </div>
+    <div class="services-grid fade-up" style="transition-delay:.1s">
+      <div class="svc-card">
+        <div class="svc-icon">⚡</div>
+        <div class="svc-name">GHL Setup &amp; Onboarding</div>
+        <div class="svc-desc">Full account configuration, sub-accounts, pipelines, team access and custom setup from the ground up.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔁</div>
+        <div class="svc-name">Automation &amp; Workflows</div>
+        <div class="svc-desc">Multi-step automations with smart triggers, conditional logic and integrations that run your business on autopilot.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-name">Funnel Building</div>
+        <div class="svc-desc">High-converting sales funnels, landing pages and checkout flows designed to turn visitors into customers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">💼</div>
+        <div class="svc-name">CRM Management</div>
+        <div class="svc-desc">Lead tracking, contact segmentation, custom fields and pipeline management built to your sales process.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📲</div>
+        <div class="svc-name">Email &amp; SMS Marketing</div>
+        <div class="svc-desc">Broadcast campaigns, drip sequences, A/B testing and automated follow-ups that convert leads.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏷️</div>
+        <div class="svc-name">White-label Agency</div>
+        <div class="svc-desc">Fully branded GHL setups — custom domains, SMTP, billing and branded apps for agencies and resellers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-name">Website Development</div>
+        <div class="svc-desc">Professional business websites built natively inside GHL — fast, mobile-ready and fully integrated.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🤖</div>
+        <div class="svc-name">AI Agents</div>
+        <div class="svc-desc">Conversational AI bots for lead capture, customer support and automated follow-up — 24/7.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📊</div>
+        <div class="svc-name">Reporting &amp; Analytics</div>
+        <div class="svc-desc">Custom dashboards, attribution tracking and performance reports to make data-driven decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<div class="showcase-section" id="work">
+  <div class="showcase-inner">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label">Work Showcase</div>
+        <h2>See It in Action</h2>
+        <p class="section-sub">A real look at how I build and implement GHL systems for clients.</p>
+      </div>
+      <div class="video-card fade-up" style="transition-delay:.12s">
+        <a href="https://youtu.be/UI8Ad54CaAw?si=Fm2CvxMGKWmn_dOo" target="_blank" class="video-thumb-link">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/UI8Ad54CaAw/maxresdefault.jpg" 
+                 onerror="this.src='https://img.youtube.com/vi/UI8Ad54CaAw/hqdefault.jpg'"
+                 alt="GoHighLevel System Build — Live Demo" class="thumb-img">
+            <div class="thumb-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1a1917"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="thumb-label">Watch on YouTube</span>
+            </div>
+          </div>
+        </a>
+        <div class="video-meta">
+          <div>
+            <div class="video-tag">▶ Work Sample</div>
+            <div class="video-title">GoHighLevel System Build — Live Demo</div>
+          </div>
+          <a href="https://youtu.be/UI8Ad54CaAw?si=Fm2CvxMGKWmn_dOo" target="_blank" class="video-link">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATION -->
+<section id="cert">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Credentials</div>
+      <h2>Officially Certified</h2>
+      <p class="section-sub">Verified by HighLevel Inc. through their official Admin Certification Program.</p>
+    </div>
+    <div class="cert-section-block fade-up" style="transition-delay:.1s">
+      <img class="cert-img" src="optimized_assets/image_5.png" alt="GHL Certified Admin Badge">
+      <div class="cert-divider"></div>
+      <div class="cert-body-text">
+        <h3>GoHighLevel Certified Admin</h3>
+        <p>Demonstrating verified expertise across the complete GoHighLevel platform — from account structure and CRM configuration to advanced automations, AI features, and agency management.</p>
+        <div class="cert-tags">
+          <span class="ctag ctag-g">✓ Verified · 2026</span>
+          <span class="ctag ctag-g">Advanced Automations</span>
+          <span class="ctag ctag-b">AI &amp; Workflows</span>
+          <span class="ctag ctag-b">Agency Management</span>
+        </div>
+        <a href="https://directory.gohighlevel.com/india/indore/certified-admins/rohit-upadhyay" target="_blank" class="cert-dir-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          View My Profile on GHL Directory ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 0">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">How I Work</div>
+      <h2>My Process</h2>
+      <p class="section-sub">A clear, structured approach — so you always know what's happening and why.</p>
+    </div>
+    <div class="process-steps fade-up" style="transition-delay:.1s">
+      <div class="p-step"><div class="p-num">01 /</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
+      <div class="p-step"><div class="p-num">02 /</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
+      <div class="p-step"><div class="p-num">03 /</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
+      <div class="p-step"><div class="p-num">04 /</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Tools &amp; Integrations</div>
+      <h2>Tech Stack</h2>
+      <p class="section-sub">Everything I work with to build, connect and scale your GHL systems.</p>
+    </div>
+    <div class="chips fade-up" style="transition-delay:.1s">
+      <span class="chip featured">GoHighLevel</span>
+      <span class="chip">Zapier</span>
+      <span class="chip">Make (Integromat)</span>
+      <span class="chip">OpenAI / GPT-4</span>
+      <span class="chip">Twilio</span>
+      <span class="chip">Stripe</span>
+      <span class="chip">Calendly</span>
+      <span class="chip">Google Analytics</span>
+      <span class="chip">Meta Ads Manager</span>
+      <span class="chip">REST API / Webhooks</span>
+      <span class="chip">WordPress</span>
+      <span class="chip">ActiveCampaign</span>
+      <span class="chip">Slack</span>
+      <span class="chip">Notion</span>
+      <span class="chip">Google Workspace</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-row">
+      <div class="fade-up">
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's Build<br><em>Something Great</em></h2>
+        <p class="section-sub" style="margin-top:16px">Ready to systemize your business on GoHighLevel? Let's talk about what you need.</p>
+      </div>
+      <div class="cta-right fade-up" style="transition-delay:.12s">
+        <a href="mailto:rohit@heyrohitu.com" class="btn-white">✉ Send a Message</a>
+        <a href="tel:+919238771755" class="btn-ghost-w">📞 Book a Discovery Call</a>
+        <ul class="contact-list">
+          <li><span class="cl-ico">✉</span><a href="mailto:rohit@heyrohitu.com">rohit@heyrohitu.com</a></li>
+          <li><span class="cl-ico">📞</span><a href="tel:+919238771755">+91 92387 71755</a></li>
+          <li><span class="cl-ico">💬</span><a href="https://wa.me/919238771755" target="_blank">WhatsApp Me</a></li>
+          <li><span class="cl-ico">🔗</span><a href="#" target="_blank">linkedin.com/in/rohitupadhyay</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <span class="foot-copy">© 2025 Rohit Upadhyay — GoHighLevel Expert</span>
+      <span class="foot-avail">Open to New Projects</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
