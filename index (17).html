@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Upadhyay — GoHighLevel Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#ffffff;
+  --off:#f7f7f5;
+  --off2:#f0eeeb;
+  --border:#e5e2dc;
+  --border2:#d0cdc7;
+  --text:#1a1917;
+  --muted:#4a4845;
+  --muted2:#6e6b64;
+  --accent:#1a6b4a;
+  --accent-l:#e8f4ee;
+  --accent-m:#2d9467;
+  --blue:#1a4a8a;
+  --blue-l:#e8eef8;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── LAYOUT ── */
+.container{max-width:1040px;margin:0 auto;padding:0 32px}
+
+/* ── NAV ── */
+header{border-bottom:1px solid var(--border);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--border2)}
+.nav-name{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:15px;color:var(--muted);padding:6px 14px;border-radius:6px;text-decoration:none;transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--text);background:var(--off)}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--text);color:var(--white);font-size:14px;font-weight:500;padding:9px 20px;border-radius:8px;text-decoration:none;transition:opacity .2s;white-space:nowrap}
+.nav-cta:hover{opacity:.85}
+
+.dot-live{width:6px;height:6px;background:var(--accent-m);border-radius:50%;position:relative}
+.dot-live::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--accent-m);animation:ripple 2s ease infinite}
+
+/* ── HERO ── */
+.hero{padding:48px 0 56px}
+.hero-top{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;margin-bottom:28px}
+.hero-left{}
+.hero-photo-col{}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;margin-bottom:28px}
+.hero-tag .tag-dot{width:5px;height:5px;background:var(--accent-m);border-radius:50%}
+h1{font-size:clamp(40px,5.5vw,62px);font-weight:600;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:20px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:20px;font-weight:400;color:var(--muted);line-height:1.7;max-width:500px;margin-bottom:40px}
+.hero-sub strong{font-weight:500;color:var(--text)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:var(--white);font-size:15px;font-weight:500;padding:13px 26px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-dark:hover{opacity:.82}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-size:15px;font-weight:500;padding:12px 26px;border-radius:8px;border:1px solid var(--border2);text-decoration:none;transition:border-color .2s,background .2s}
+.btn-outline:hover{border-color:var(--border2);background:var(--off)}
+.photo-frame{width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative;background:var(--off)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-cert-full{width:100%;background:var(--white);border:1.5px solid rgba(26,107,74,.22);border-radius:16px;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 20px rgba(26,107,74,.08);position:relative;overflow:hidden}
+.hero-cert-full::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#34c98a,rgba(26,107,74,.15))}
+.hcf-left{display:flex;align-items:center;gap:20px}
+.hcf-badge-img{width:72px;height:72px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 10px rgba(0,148,103,.3))}
+.hcf-eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.hcf-title{font-size:21px;font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.2;margin-bottom:3px}
+.hcf-meta{font-size:15px;color:var(--muted)}
+.hcf-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.hcf-verified{display:inline-flex;align-items:center;gap:7px;background:var(--accent-l);border:1px solid rgba(26,107,74,.22);border-radius:20px;padding:8px 18px;font-size:14px;font-weight:600;color:var(--accent)}
+.hcf-dir-link{display:inline-flex;align-items:center;gap:7px;background:var(--text);color:var(--white);border-radius:8px;padding:9px 18px;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s}
+.hcf-dir-link:hover{opacity:.82}
+
+/* ── STATS ── */
+.stats-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:28px 24px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-size:34px;font-weight:600;letter-spacing:-.04em;color:var(--text);line-height:1;margin-bottom:5px}
+.stat-n span{color:var(--accent)}
+.stat-l{font-size:15px;color:var(--muted)}
+
+/* ── SECTIONS ── */
+section{padding:88px 0}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-family:var(--mono)}
+h2{font-size:clamp(30px,3.5vw,40px);font-weight:600;letter-spacing:-.025em;color:var(--text);line-height:1.15;margin-bottom:16px}
+.section-sub{font-size:19px;font-weight:400;color:var(--muted);max-width:560px;line-height:1.75}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:48px}
+.svc-card{background:var(--white);padding:32px 28px;transition:background .2s}
+.svc-card:hover{background:var(--off)}
+.svc-icon{font-size:24px;margin-bottom:16px;line-height:1}
+.svc-name{font-size:17px;font-weight:600;color:var(--text);margin-bottom:8px}
+.svc-desc{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ── SHOWCASE ── */
+.showcase-section{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.showcase-inner{padding:88px 0}
+.video-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:48px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.video-meta{padding:24px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.video-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-l);border:1px solid rgba(26,74,138,.15);border-radius:20px;padding:4px 12px;font-size:13px;font-weight:500;color:var(--blue)}
+.video-title{font-size:16px;font-weight:500;color:var(--text);margin-top:4px}
+.video-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;padding:8px 16px;border:1px solid rgba(26,107,74,.25);border-radius:7px;transition:background .2s}
+.video-link:hover{background:var(--accent-l)}
+
+/* ── CERT SECTION ── */
+.cert-section-block{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:40px 44px;display:flex;align-items:center;gap:36px;margin-top:48px}
+.cert-section-block img.cert-img{width:100px;height:100px;object-fit:contain;flex-shrink:0}
+.cert-divider{width:1px;height:80px;background:var(--border);flex-shrink:0}
+.cert-body-text h3{font-size:21px;font-weight:600;color:var(--text);margin-bottom:8px}
+.cert-body-text p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px}
+.cert-tags{display:flex;gap:8px;flex-wrap:wrap}
+.ctag{font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px}
+.ctag-g{background:var(--accent-l);color:var(--accent);border:1px solid rgba(26,107,74,.18)}
+.ctag-b{background:var(--blue-l);color:var(--blue);border:1px solid rgba(26,74,138,.15)}
+
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:48px}
+.p-step{background:var(--white);padding:32px 24px;transition:background .2s}
+.p-step:hover{background:var(--off)}
+.p-num{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.1em;margin-bottom:16px}
+.p-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px}
+.p-desc{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ── TECH ── */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.chip{font-size:15px;font-weight:400;color:var(--text);background:var(--off);border:1px solid var(--border);border-radius:7px;padding:9px 18px;transition:border-color .2s,background .2s;cursor:default}
+.chip:hover{background:var(--white);border-color:var(--border2)}
+.chip.featured{background:var(--accent-l);border-color:rgba(26,107,74,.22);color:var(--accent);font-weight:500}
+
+/* ── CTA ── */
+.cta-section{background:var(--text);color:var(--white);padding:88px 0}
+.cta-section .section-label{color:rgba(255,255,255,.4)}
+.cta-section h2{color:var(--white)}
+.cta-section h2 em{font-style:normal;color:rgba(255,255,255,.5)}
+.cta-section .section-sub{color:rgba(255,255,255,.55)}
+.cta-row{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;flex-wrap:wrap}
+.cta-right{display:flex;flex-direction:column;gap:16px;min-width:260px}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--text);font-size:15px;font-weight:600;padding:14px 28px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-white:hover{opacity:.9}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.85);font-size:15px;font-weight:400;padding:13px 28px;border-radius:8px;border:1px solid rgba(255,255,255,.25);text-decoration:none;transition:border-color .2s,color .2s}
+.btn-ghost-w:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.contact-list li{font-size:15px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px}
+.contact-list a{color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s}
+.contact-list a:hover{color:var(--white)}
+.cl-ico{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);flex-shrink:0}
+.cl-ico svg{width:15px;height:15px;fill:none;stroke:rgba(255,255,255,.7);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.social-links{display:flex;gap:10px;margin-top:8px}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);text-decoration:none;transition:background .2s,border-color .2s,color .2s;flex-shrink:0}
+.social-btn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);color:var(--white)}
+.social-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* ── BOOKING WIDGET ── */
+.booking-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.booking-modal-overlay.open{display:flex}
+.booking-modal{background:var(--white);border-radius:16px;width:100%;max-width:640px;max-height:90vh;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.3);position:relative;display:flex;flex-direction:column}
+.booking-modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);flex-shrink:0}
+.booking-modal-head span{font-size:16px;font-weight:600;color:var(--text)}
+.booking-modal-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--off);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:background .15s;line-height:1}
+.booking-modal-close:hover{background:var(--border)}
+.booking-modal-body{flex:1;overflow-y:auto}
+.booking-modal-body iframe{display:block;width:100%;min-height:520px;border:none}
+.btn-book{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent-m),var(--accent));color:var(--white);font-size:15px;font-weight:600;padding:14px 28px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:opacity .2s;font-family:var(--sans)}
+.btn-book:hover{opacity:.88}
+
+.foot-social{display:flex;gap:8px;align-items:center}
+.foot-social-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--off);color:var(--muted);text-decoration:none;transition:border-color .2s,background .2s,color .2s}
+.foot-social-btn:hover{background:var(--white);border-color:var(--border2);color:var(--text)}
+.foot-social-btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:28px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:14px;color:var(--muted)}
+.foot-avail{font-size:14px;color:var(--accent);font-weight:500;display:flex;align-items:center;gap:6px}
+.foot-avail::before{content:'';width:6px;height:6px;background:var(--accent-m);border-radius:50%}
+
+/* ── ANIM ── */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@keyframes ripple{0%{transform:scale(1);opacity:1}100%{transform:scale(2.8);opacity:0}}
+
+/* ── RESPONSIVE ── */
+
+/* ── TABLET (≤1024px) ── */
+/* Desktop: show desktop photo, hide mobile photo */
+.hero-photo-mobile{display:none}
+.hero-photo-desktop{display:block}
+
+@media(max-width:1024px){
+  /* Hide cert badge in nav — it breaks layout at tablet widths */
+  .nav-cert-badge{display:none}
+
+  /* Show mobile photo (inside hero-left), hide desktop photo (outside) */
+  .hero-photo-mobile{display:block}
+  .hero-photo-desktop{display:none}
+
+  .hero-top{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+  .hero-left{
+    text-align:center;
+  }
+  .hero-sub{
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero-actions{
+    justify-content:center;
+  }
+  .photo-frame{
+    max-width:300px;
+    margin:0 auto 24px;
+  }
+  .hero-cert-full{
+    margin-top:20px;
+  }
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .process-steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* ── LARGE MOBILE / SMALL TABLET (≤840px) ── */
+@media(max-width:840px){
+  nav .nav-links{display:none}
+  .hero-cert-full{flex-direction:column;align-items:center;text-align:center;padding:20px}
+  .hcf-left{flex-direction:column;align-items:center;text-align:center}
+  .hcf-right{justify-content:center;width:100%}
+  .hero-photo-desktop{display:none}
+  .hero-photo-mobile{display:block}
+  .hero-photo-col{justify-content:center}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item{border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none}
+  .cert-section-block{flex-direction:column;gap:24px;padding:28px}
+  .cert-divider{width:100%;height:1px}
+  .cta-row{flex-direction:column;gap:32px}
+}
+
+/* ── MOBILE (≤768px) ── */
+@media(max-width:768px){
+  /* Nav */
+  .nav-cert-badge{display:none}
+  .nav-name{display:none}
+  nav{height:68px}
+  .nav-cta{padding:9px 16px;font-size:14px;white-space:nowrap}
+
+  /* Hero */
+  .hero{padding:32px 0 48px}
+  .hero-tag{margin-bottom:18px}
+  h1{font-size:clamp(36px,9vw,52px);line-height:1.08}
+  .hero-sub{font-size:18px;line-height:1.65}
+  .hero-actions{flex-direction:column;width:100%}
+  .hero-actions a{width:100%;justify-content:center}
+  .photo-frame{max-width:260px;margin:10px auto 24px}
+  .hero-photo-desktop{display:none}
+  .hero-photo-mobile{display:block}
+
+  /* Certification strip */
+  .hero-cert-full{padding:18px;border-radius:14px}
+  .hcf-title{font-size:18px}
+  .hcf-meta{font-size:14px}
+  .hcf-right{flex-direction:column;width:100%;gap:8px}
+  .hcf-verified,.hcf-dir-link{width:100%;justify-content:center}
+
+  /* Stats */
+  .stat-item{text-align:center;padding:22px 16px}
+  .stat-n{font-size:28px}
+
+  /* Sections */
+  section{padding:64px 0}
+  .showcase-inner{padding:64px 0}
+  .section-sub{font-size:17px}
+
+  /* Services */
+  .services-grid{grid-template-columns:1fr}
+  .svc-card{padding:24px 20px}
+
+  /* Process */
+  .process-steps{grid-template-columns:1fr}
+  .p-step{padding:24px 20px}
+
+  /* Cert section */
+  .cert-section-block{padding:22px 20px}
+  .cert-body-text h3{font-size:18px}
+
+  /* CTA */
+  .cta-section{padding:64px 0}
+  .cta-right{width:100%}
+  .btn-white,.btn-ghost-w{width:100%;justify-content:center}
+
+  /* Video */
+  .video-meta{flex-direction:column;align-items:flex-start;gap:12px}
+  .video-link{width:100%;justify-content:center}
+
+  /* Footer */
+  .foot-inner{flex-direction:column;align-items:center;text-align:center;gap:8px}
+}
+
+/* ── SMALL PHONES (≤520px) ── */
+@media(max-width:520px){
+  .container{padding:0 16px}
+  h1{font-size:36px}
+  .hero-sub{font-size:16px}
+  .photo-frame{max-width:220px}
+
+  /* Cert strip - stack everything */
+  .hcf-left{flex-direction:column;text-align:center;align-items:center}
+  .hcf-badge-img{width:56px;height:56px}
+
+  /* Cert section block */
+  .cert-section-block{padding:18px 16px}
+  .cert-tags{gap:6px}
+  .ctag{font-size:12px;padding:4px 10px}
+
+  /* Services strip */
+  .ss-inner{grid-template-columns:repeat(2,1fr)}
+  .ss-item:nth-child(9){border-right:none}
+
+  /* Stats */
+  .stats-inner{grid-template-columns:1fr}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+
+  /* Hero badge */
+  .hero-badge-card{padding:20px 16px}
+  .hbc-badge-img{width:80px;height:80px}
+
+  /* Chips */
+  .chip{font-size:14px;padding:7px 14px}
+
+  /* Sections */
+  section{padding:52px 0}
+  .showcase-inner{padding:52px 0}
+  h2{font-size:26px}
+  .section-sub{font-size:16px}
+}
+
+.video-thumb-link{display:block;text-decoration:none}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#111}
+.thumb-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.video-thumb-link:hover .thumb-img{transform:scale(1.03)}
+.thumb-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:background .3s}
+.video-thumb-link:hover .thumb-overlay{background:rgba(0,0,0,.5)}
+.play-btn{width:68px;height:68px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.video-thumb-link:hover .play-btn{transform:scale(1.08);background:#fff}
+.play-btn svg{margin-left:4px}
+.thumb-label{font-family:var(--sans);font-size:15px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.01em}
+
+/* HERO BADGE CARD */
+.hero-badge-card{
+  position:relative;
+  width:100%;max-width:320px;
+  background:var(--white);
+  border:1.5px solid rgba(26,107,74,.2);
+  border-radius:20px;
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 4px 24px rgba(26,107,74,.1);
+  overflow:hidden;
+  text-align:center;
+}
+.hbc-glow{
+  position:absolute;
+  top:-60px;left:50%;transform:translateX(-50%);
+  width:220px;height:160px;
+  background:radial-gradient(circle,rgba(26,148,103,.1) 0%,transparent 70%);
+  pointer-events:none;
+  border-radius:50%;
+}
+.hbc-badge-img{
+  width:110px;height:110px;
+  object-fit:contain;
+  flex-shrink:0;
+  filter:drop-shadow(0 3px 12px rgba(0,148,103,.3));
+  mix-blend-mode:multiply;
+}
+.hbc-text{display:flex;flex-direction:column;align-items:center;gap:4px}
+.hbc-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.hbc-title{
+  font-size:17px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin-bottom:5px;
+}
+.hbc-meta{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.hbc-check{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--accent-l);
+  border:1px solid rgba(26,107,74,.2);
+  border-radius:20px;
+  padding:6px 16px;
+  font-size:13px;
+  font-weight:500;
+  color:var(--accent);
+}
+.hbc-tick{font-weight:700}
+
+.hbc-dir-link{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:8px;
+  font-size:13px;font-weight:500;
+  color:var(--blue);
+  text-decoration:none;
+  background:var(--blue-l);
+  border:1px solid rgba(26,74,138,.18);
+  border-radius:20px;
+  padding:5px 14px;
+  transition:background .2s,border-color .2s;
+}
+.hbc-dir-link:hover{background:#dce6f7;border-color:rgba(26,74,138,.35);}
+
+.cert-dir-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;
+  font-size:14px;font-weight:500;
+  color:var(--accent);
+  text-decoration:none;
+  background:var(--accent-l);
+  border:1px solid rgba(26,107,74,.22);
+  border-radius:8px;
+  padding:10px 18px;
+  transition:background .2s,border-color .2s;
+}
+.cert-dir-btn:hover{background:#d4eddf;border-color:rgba(26,107,74,.4);}
+
+.nav-cert-badge{
+  display:flex;align-items:center;gap:9px;
+  background:var(--white);
+  border:1.5px solid rgba(26,107,74,.25);
+  border-radius:10px;
+  padding:6px 14px 6px 8px;
+  box-shadow:0 1px 6px rgba(26,107,74,.1);
+}
+.nav-cert-img{width:32px;height:32px;object-fit:contain;flex-shrink:0}
+.nav-cert-text{}
+.nav-cert-title{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:-.01em;line-height:1.2}
+.nav-cert-sub{font-size:10px;color:var(--muted);line-height:1.2}
+
+/* ── EVENT SECTION ── */
+.event-cred{display:flex;align-items:center;gap:32px;margin-top:28px;padding:20px 28px;background:var(--white);border:1px solid var(--border);border-radius:12px;flex-wrap:wrap}
+.event-cred-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text)}
+.event-cred-item svg{color:var(--accent);flex-shrink:0}
+@media(max-width:720px){
+  .event-cred{flex-direction:column;gap:14px;align-items:flex-start}
+}
+
+/* ── SERVICES STRIP ── */
+.services-strip{background:var(--white);border-bottom:1px solid var(--border);padding:0}
+.ss-inner{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  border-left:1px solid var(--border);
+}
+.ss-item{
+  padding:22px 14px;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;
+  gap:8px;text-align:center;
+  transition:background .2s;
+  cursor:default;
+}
+.ss-item:hover{background:var(--off)}
+.ss-icon{font-size:20px;line-height:1}
+.ss-name{font-size:11px;font-weight:500;color:var(--muted);line-height:1.4;letter-spacing:.01em}
+@media(max-width:900px){
+  .ss-inner{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:520px){
+  .ss-inner{grid-template-columns:repeat(2,1fr)}
+  .ss-item:nth-child(9){border-right:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="nav-brand">
+        <img class="nav-avatar" src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay">
+        <span class="nav-name">Rohit Upadhyay</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#funnels">Funnels</a></li>
+        <li><a href="#websites">Websites</a></li>
+        <li><a href="#cert">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="nav-cert-badge">
+          <img src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin" class="nav-cert-img">
+          <div class="nav-cert-text">
+            <div class="nav-cert-title">GHL Certified Admin</div>
+            <div class="nav-cert-sub">HighLevel Inc. · 2026</div>
+          </div>
+        </div>
+        <a href="#contact" class="nav-cta">Hire Me →</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-top fade-up">
+      <div class="hero-left">
+        <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Expert · Available Now</div>
+        <h1>Hi, I'm <em>Rohit</em> —<br>GHL Certified Admin</h1>
+        <p class="hero-sub">I build <strong>complete business systems</strong> on GoHighLevel — automations, funnels, AI agents, CRM setups and white-label agency solutions that actually work.</p>
+        <div class="hero-photo-col hero-photo-mobile">
+          <div class="photo-frame">
+            <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-dark">Work With Me →</a>
+          <a href="#services" class="btn-outline">See My Services</a>
+        </div>
+      </div>
+      <div class="hero-photo-col hero-photo-desktop">
+        <div class="photo-frame">
+          <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+        </div>
+      </div>
+    </div>
+    <div class="hero-cert-full fade-up" style="transition-delay:.18s">
+      <div class="hcf-left">
+        <img src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge" class="hcf-badge-img">
+        <div class="hcf-text">
+          <div class="hcf-eyebrow">Official Certification</div>
+          <div class="hcf-title">GoHighLevel Certified Admin</div>
+          <div class="hcf-meta">Issued by HighLevel Inc. · 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item fade-up"><div class="stat-n">500<span>+</span></div><div class="stat-l">Clients Served Globally</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.08s"><div class="stat-n">100<span>%</span></div><div class="stat-l">Certified by GHL</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.16s"><div class="stat-n">9<span>+</span></div><div class="stat-l">Services Offered</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.24s"><div class="stat-n">∞</div><div class="stat-l">Automations Built</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">What I Do</div>
+      <h2>Services &amp; Expertise</h2>
+      <p class="section-sub">From a fresh GHL account to a fully automated business — I handle every layer of your GoHighLevel stack.</p>
+    </div>
+    <div class="services-grid fade-up" style="transition-delay:.1s">
+      <div class="svc-card">
+        <div class="svc-icon">⚡</div>
+        <div class="svc-name">GHL Setup &amp; Onboarding</div>
+        <div class="svc-desc">Full account configuration, sub-accounts, pipelines, team access and custom setup from the ground up.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔁</div>
+        <div class="svc-name">Automation &amp; Workflows</div>
+        <div class="svc-desc">Multi-step automations with smart triggers, conditional logic and integrations that run your business on autopilot.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-name">Funnel Building</div>
+        <div class="svc-desc">High-converting sales funnels, landing pages and checkout flows designed to turn visitors into customers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">💼</div>
+        <div class="svc-name">CRM Management</div>
+        <div class="svc-desc">Lead tracking, contact segmentation, custom fields and pipeline management built to your sales process.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📲</div>
+        <div class="svc-name">Email &amp; SMS Marketing</div>
+        <div class="svc-desc">Broadcast campaigns, drip sequences, A/B testing and automated follow-ups that convert leads.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏷️</div>
+        <div class="svc-name">White-label Agency</div>
+        <div class="svc-desc">Fully branded GHL setups — custom domains, SMTP, billing and branded apps for agencies and resellers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-name">Website Development</div>
+        <div class="svc-desc">Professional business websites built natively inside GHL — fast, mobile-ready and fully integrated.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🤖</div>
+        <div class="svc-name">AI Agents</div>
+        <div class="svc-desc">Conversational AI bots for lead capture, customer support and automated follow-up — 24/7.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📊</div>
+        <div class="svc-name">Reporting &amp; Analytics</div>
+        <div class="svc-desc">Custom dashboards, attribution tracking and performance reports to make data-driven decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SALES FUNNELS SECTION
+═══════════════════════════════════════════ -->
+<section id="funnels" style="padding:88px 0 0;background:var(--white);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Funnel Design</div>
+      <h2>Sales Funnels</h2>
+      <p class="section-sub">High-converting funnel pages built inside GoHighLevel — hover to scroll through each design.</p>
+    </div>
+  </div>
+
+  <div class="dp-outer fade-up" style="transition-delay:.12s">
+    <div class="dp-track" id="funnelTrack">
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/E_com_Funnel.png" alt="Supplement Ecom Funnel" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">E-Commerce</span>
+          <span class="dp-name">Supplement Ecom Funnel</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Fuminine_Automated_Funnel.png" alt="Feminine Automated Funnel" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Coaching</span>
+          <span class="dp-name">Feminine Automated Funnel</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Low_Ticket_SLO_Funnel.png" alt="Low Ticket SLO Funnel" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Digital Product</span>
+          <span class="dp-name">Low Ticket SLO Funnel</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/SaaS_Funnel.png" alt="SaaS Funnel" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">SaaS</span>
+          <span class="dp-name">SaaS Funnel</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Webinar_Registration_Funnel.png" alt="Webinar Registration Funnel" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Webinar</span>
+          <span class="dp-name">Webinar Registration Funnel</span>
+        </div>
+      </div>
+
+    </div><!-- /dp-track -->
+
+    <button class="dp-arrow dp-prev" aria-label="Previous" onclick="dpTrackScroll('funnelTrack',-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="dp-arrow dp-next" aria-label="Next" onclick="dpTrackScroll('funnelTrack',1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <div class="dp-dots" id="funnelDots"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WEBSITES SECTION
+═══════════════════════════════════════════ -->
+<section id="websites" style="padding:88px 0 0;background:var(--off);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Website Design</div>
+      <h2>Business Websites</h2>
+      <p class="section-sub">Full websites built natively inside GoHighLevel — fast, mobile-ready and fully integrated with your CRM.</p>
+    </div>
+  </div>
+
+  <div class="dp-outer fade-up" style="transition-delay:.12s">
+    <div class="dp-track" id="websiteTrack">
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Personal_Brand_Website.png" alt="Personal Brand Website" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Personal Brand</span>
+          <span class="dp-name">Personal Brand Website</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Premium_Roofing_Website.png" alt="Premium Roofing Website" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Local Business</span>
+          <span class="dp-name">Premium Roofing Website</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Agency_Website.png" alt="Agency Website" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Agency</span>
+          <span class="dp-name">Agency Website</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/Productivity_Coaching_Website.png" alt="Productivity Coaching Website" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">Coaching</span>
+          <span class="dp-name">Productivity Coaching Website</span>
+        </div>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-img-wrap">
+          <img src="images/SMS_Marketing_Website.png" alt="SMS Marketing Website" loading="lazy">
+        </div>
+        <div class="dp-meta">
+          <span class="dp-tag">SaaS</span>
+          <span class="dp-name">SMS Marketing Website</span>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="dp-arrow dp-prev" aria-label="Previous" onclick="dpTrackScroll('websiteTrack',-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="dp-arrow dp-next" aria-label="Next" onclick="dpTrackScroll('websiteTrack',1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <div class="dp-dots" id="websiteDots"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VOICE AI SECTION
+═══════════════════════════════════════════ -->
+<div class="showcase-section" id="voice-ai">
+  <div class="showcase-inner">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label">Voice AI</div>
+        <h2>Voice AI in Action</h2>
+        <p class="section-sub">A real look at how I build and implement Voice AI systems for clients.</p>
+      </div>
+      <div class="video-card fade-up" style="transition-delay:.12s">
+        <a href="https://youtu.be/y8wWEOmiWP8?si=CzBYPcFMHPjcXC0e" target="_blank" class="video-thumb-link">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/y8wWEOmiWP8/maxresdefault.jpg" 
+                 onerror="this.src='https://img.youtube.com/vi/y8wWEOmiWP8/hqdefault.jpg'"
+                 alt="Voice AI System Build — Live Demo" class="thumb-img">
+            <div class="thumb-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1a1917"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="thumb-label">Watch on YouTube</span>
+            </div>
+          </div>
+        </a>
+        <div class="video-meta">
+          <div>
+            <div class="video-tag">▶ Work Sample</div>
+            <div class="video-title">Voice AI System Build — Live Demo</div>
+          </div>
+          <a href="https://youtu.be/y8wWEOmiWP8?si=CzBYPcFMHPjcXC0e" target="_blank" class="video-link">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ══════════════════════════════
+   SHARED CARD IMAGE WRAP
+══════════════════════════════ */
+.dp-img-wrap, .ws-img-wrap {
+  width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+  line-height:0;
+}
+.dp-img-wrap::-webkit-scrollbar,
+.ws-img-wrap::-webkit-scrollbar{width:4px}
+.dp-img-wrap::-webkit-scrollbar-thumb,
+.ws-img-wrap::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+.dp-img-wrap img, .ws-img-wrap img{
+  width:100%;height:auto;display:block;
+}
+
+/* ══════════════════════════════
+   FUNNEL CAROUSEL
+══════════════════════════════ */
+.dp-outer{
+  position:relative;
+  margin-top:48px;
+}
+.dp-track{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:8px 32px 24px;
+  cursor:grab;
+}
+.dp-track:active{cursor:grabbing}
+.dp-track::-webkit-scrollbar{display:none}
+
+.dp-card{
+  flex:0 0 300px;
+  scroll-snap-align:start;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.dp-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.1);
+}
+.dp-img-wrap{
+  max-height:420px;
+}
+.dp-meta{
+  padding:16px 20px;
+  border-top:1px solid var(--border);
+  display:flex;flex-direction:column;gap:4px;
+}
+.dp-tag{
+  font-family:var(--mono);
+  font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);
+}
+.dp-name{
+  font-size:15px;font-weight:600;
+  color:var(--text);letter-spacing:-.01em;
+}
+
+/* Arrows */
+.dp-arrow{
+  display:none;
+  position:absolute;
+  top:44%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--white);
+  border:1px solid var(--border2);
+  cursor:pointer;
+  align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.1);
+  transition:background .2s,box-shadow .2s;
+  z-index:10;color:var(--text);
+}
+.dp-arrow:hover{background:var(--off);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.dp-prev{left:4px}
+.dp-next{right:4px}
+@media(min-width:769px){.dp-arrow{display:flex}}
+
+/* Dots */
+.dp-dots{
+  display:flex;justify-content:center;gap:6px;
+  margin-top:16px;padding-bottom:40px;
+}
+.dp-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--border2);border:none;
+  cursor:pointer;padding:0;
+  transition:background .2s,transform .2s;
+}
+.dp-dot.active{background:var(--accent);transform:scale(1.4)}
+
+/* Mobile */
+@media(max-width:768px){
+  .dp-track{padding:8px 16px 20px;gap:14px;justify-content:safe center}
+  .dp-card{flex:0 0 calc(100vw - 56px);scroll-snap-align:center}
+}
+@media(max-width:520px){
+  .dp-card{flex:0 0 calc(100vw - 32px);scroll-snap-align:center}
+  .dp-track{padding:8px 16px 20px}
+}
+
+
+</style>
+
+<script>
+(function(){
+  // ── Website carousel ──
+  const wTrack = document.getElementById('websiteTrack');
+  const wDots  = document.getElementById('websiteDots');
+  const wCards = wTrack ? wTrack.querySelectorAll('.dp-card') : [];
+
+  wCards.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'dp-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Website '+(i+1));
+    d.addEventListener('click',()=>wCards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}));
+    wDots.appendChild(d);
+  });
+
+  if(wTrack){
+    wTrack.addEventListener('scroll',()=>{
+      const idx = Math.round(wTrack.scrollLeft / (wCards[0].offsetWidth + 20));
+      wDots.querySelectorAll('.dp-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+    },{passive:true});
+
+    let isDown2=false,startX2,sl2;
+    wTrack.addEventListener('mousedown',e=>{isDown2=true;startX2=e.pageX-wTrack.offsetLeft;sl2=wTrack.scrollLeft;wTrack.style.userSelect='none'});
+    wTrack.addEventListener('mouseleave',()=>{isDown2=false;wTrack.style.userSelect=''});
+    wTrack.addEventListener('mouseup',  ()=>{isDown2=false;wTrack.style.userSelect=''});
+    wTrack.addEventListener('mousemove',e=>{if(!isDown2)return;e.preventDefault();wTrack.scrollLeft=sl2-(e.pageX-wTrack.offsetLeft-startX2)*1.5});
+  }
+
+  // ── Funnel carousel ──
+  const fTrack = document.getElementById('funnelTrack');
+  const fDots  = document.getElementById('funnelDots');
+  const fCards = fTrack ? fTrack.querySelectorAll('.dp-card') : [];
+
+  fCards.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'dp-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Funnel '+(i+1));
+    d.addEventListener('click',()=>fCards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}));
+    fDots.appendChild(d);
+  });
+
+  if(fTrack){
+    fTrack.addEventListener('scroll',()=>{
+      const idx = Math.round(fTrack.scrollLeft / (fCards[0].offsetWidth + 20));
+      fDots.querySelectorAll('.dp-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+    },{passive:true});
+  }
+
+  // ── Hover auto-scroll (all dp + ws image wraps) ──
+  document.querySelectorAll('.dp-card, .ws-card').forEach(card=>{
+    const wrap = card.querySelector('.dp-img-wrap, .ws-img-wrap');
+    if(!wrap) return;
+    let raf, startTime;
+    card.addEventListener('mouseenter',()=>{
+      const max = wrap.scrollHeight - wrap.clientHeight;
+      if(max<=0) return;
+      startTime = null;
+      const dur = Math.max(3500, max * 5);
+      function step(ts){
+        if(!startTime) startTime=ts;
+        const p = Math.min((ts-startTime)/dur,1);
+        wrap.scrollTop = p * max;
+        if(p<1) raf=requestAnimationFrame(step);
+      }
+      raf=requestAnimationFrame(step);
+    });
+    card.addEventListener('mouseleave',()=>{cancelAnimationFrame(raf);wrap.scrollTop=0});
+  });
+
+  // ── Drag-to-scroll (funnel track) ──
+  if(fTrack){
+    let isDown=false,startX,sl;
+    fTrack.addEventListener('mousedown',e=>{isDown=true;startX=e.pageX-fTrack.offsetLeft;sl=fTrack.scrollLeft;fTrack.style.userSelect='none'});
+    fTrack.addEventListener('mouseleave',()=>{isDown=false;fTrack.style.userSelect=''});
+    fTrack.addEventListener('mouseup',  ()=>{isDown=false;fTrack.style.userSelect=''});
+    fTrack.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();fTrack.scrollLeft=sl-(e.pageX-fTrack.offsetLeft-startX)*1.5});
+  }
+})();
+
+function dpTrackScroll(id, dir){
+  const t = document.getElementById(id);
+  if(!t) return;
+  const card = t.querySelector('.dp-card');
+  const w = card ? card.offsetWidth + 20 : 320;
+  t.scrollBy({left: dir * w, behavior:'smooth'});
+}
+</script>
+
+<!-- CERTIFICATION -->
+<section id="cert">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Credentials</div>
+      <h2>Officially Certified</h2>
+      <p class="section-sub">Verified by HighLevel Inc. through their official Admin Certification Program.</p>
+    </div>
+    <div class="cert-section-block fade-up" style="transition-delay:.1s">
+      <img class="cert-img" src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge">
+      <div class="cert-divider"></div>
+      <div class="cert-body-text">
+        <h3>GoHighLevel Certified Admin</h3>
+        <p>Demonstrating verified expertise across the complete GoHighLevel platform — from account structure and CRM configuration to advanced automations, AI features, and agency management.</p>
+        <div class="cert-tags">
+          <span class="ctag ctag-g">✓ Verified · 2026</span>
+          <span class="ctag ctag-g">Advanced Automations</span>
+          <span class="ctag ctag-b">AI &amp; Workflows</span>
+          <span class="ctag ctag-b">Agency Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 0">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">How I Work</div>
+      <h2>My Process</h2>
+      <p class="section-sub">A clear, structured approach — so you always know what's happening and why.</p>
+    </div>
+    <div class="process-steps fade-up" style="transition-delay:.1s">
+      <div class="p-step"><div class="p-num">01 /</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
+      <div class="p-step"><div class="p-num">02 /</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
+      <div class="p-step"><div class="p-num">03 /</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
+      <div class="p-step"><div class="p-num">04 /</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Tools &amp; Integrations</div>
+      <h2>Tech Stack</h2>
+      <p class="section-sub">Everything I work with to build, connect and scale your GHL systems.</p>
+    </div>
+    <div class="chips fade-up" style="transition-delay:.1s">
+      <span class="chip featured">GoHighLevel</span>
+      <span class="chip">Zapier</span>
+      <span class="chip">Make (Integromat)</span>
+      <span class="chip">OpenAI / GPT-4</span>
+      <span class="chip">Twilio</span>
+      <span class="chip">Stripe</span>
+      <span class="chip">Calendly</span>
+      <span class="chip">Google Analytics</span>
+      <span class="chip">Meta Ads Manager</span>
+      <span class="chip">REST API / Webhooks</span>
+      <span class="chip">WordPress</span>
+      <span class="chip">ActiveCampaign</span>
+      <span class="chip">Slack</span>
+      <span class="chip">Notion</span>
+      <span class="chip">Google Workspace</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-row">
+      <div class="fade-up">
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's Build<br><em>Something Great</em></h2>
+        <p class="section-sub" style="margin-top:16px">Ready to systemize your business on GoHighLevel? Let's talk about what you need.</p>
+      </div>
+      <div class="cta-right fade-up" style="transition-delay:.12s">
+        <a href="mailto:rohit@heyrohitu.com" class="btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          Send a Message
+        </a>
+        <button class="btn-book" onclick="document.getElementById('bookingModal').classList.add('open')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+          Book a Discovery Call
+        </button>
+        <ul class="contact-list">
+          <li>
+            <span class="cl-ico">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </span>
+            <a href="mailto:rohit@heyrohitu.com">rohit@heyrohitu.com</a>
+          </li>
+          <li>
+            <span class="cl-ico">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 4.18 2 2 0 012.06 2H5a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <a href="tel:+919238771755">+91 92387 71755</a>
+          </li>
+          <li>
+            <span class="cl-ico">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </span>
+            <a href="https://wa.me/919238771755" target="_blank">WhatsApp Me</a>
+          </li>
+        </ul>
+        <div class="social-links">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/rohitupadhyay001/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/rohit.upadhyay.624920/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/rohitupadhyay___/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING MODAL -->
+<div class="booking-modal-overlay" id="bookingModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="booking-modal">
+    <div class="booking-modal-head">
+      <span>📅 Book a Discovery Call</span>
+      <button class="booking-modal-close" onclick="document.getElementById('bookingModal').classList.remove('open')" aria-label="Close">×</button>
+    </div>
+    <div class="booking-modal-body">
+      <iframe src="https://api.hiighvance.com/widget/booking/WNA7LwpyEJehObM7Eb2y" scrolling="no" id="WNA7LwpyEJehObM7Eb2y_1780826229338"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <span class="foot-copy">© 2025 Rohit Upadhyay — GoHighLevel Expert</span>
+      <div class="foot-social">
+        <a href="https://www.linkedin.com/in/rohitupadhyay001/" target="_blank" rel="noopener" class="foot-social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/rohit.upadhyay.624920/" target="_blank" rel="noopener" class="foot-social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/rohitupadhyay___/" target="_blank" rel="noopener" class="foot-social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+      <span class="foot-avail">Open to New Projects</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://api.hiighvance.com/js/form_embed.js" type="text/javascript"></script>
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Close modal on Escape key
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') document.getElementById('bookingModal').classList.remove('open');
+});
+</script>
+</body>
+</html>
