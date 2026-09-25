@@ -1119,6 +1119,33 @@ function dpTrackScroll(id, dir){
   </div>
 </section>
 
+<!-- CLIENT RESULTS -->
+<section id="client-results" style="background:#0a0a0a;padding:80px 20px;">
+<div style="max-width:1200px;margin:0 auto;">
+<h2 style="text-align:center;font-size:42px;color:#fff;margin:0 0 12px;">Client Results</h2>
+<p style="text-align:center;color:#fff;opacity:.7;font-size:18px;margin:0 0 48px;">Real feedback from real clients</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
+<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
+<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_1"><source src="VIDEO_LINK_1" type="video/mp4"></video>
+<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
+</div>
+<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
+<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_2"><source src="VIDEO_LINK_2" type="video/mp4"></video>
+<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
+</div>
+<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
+<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_3"><source src="VIDEO_LINK_3" type="video/mp4"></video>
+<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
+</div>
+</div>
+</div>
+<style>
+#client-results > div > div:last-child > div{transition:transform .2s ease;}
+#client-results > div > div:last-child > div:hover{transform:scale(1.02);}
+@media(max-width:768px){#client-results{padding:64px 20px!important;}#client-results h2{font-size:34px!important;}#client-results > div > div:last-child{grid-template-columns:1fr!important;}}
+</style>
+</section>
+
 <!-- CERTIFICATION -->
 <section id="cert">
   <div class="container">
