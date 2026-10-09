@@ -555,6 +555,31 @@ section{padding-top:96px;padding-bottom:96px}
 /* Experiment: restrained, consistent service iconography */
 #services .svc-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;color:#243247;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:20px}
 #services .svc-icon svg{width:23px;height:23px;display:block}
+
+/* Experiment polish: portfolio previews, credential, CTA, responsive behavior */
+#funnels .dp-card,#websites .dp-card{border-radius:12px;box-shadow:0 4px 16px rgba(15,23,42,.04);border-color:#dbe2ea}
+#funnels .dp-meta,#websites .dp-meta{min-height:122px;gap:7px;padding:19px 20px}
+#funnels .dp-name,#websites .dp-name{font-weight:650;color:#172033;line-height:1.4}
+.dp-preview-note{font-size:12px;color:#64748b;line-height:1.4;margin-top:3px}
+#funnels .dp-tag,#websites .dp-tag{align-self:flex-start}
+#cert .cert-section-block{border:1px solid #cbd5e1;box-shadow:0 10px 35px rgba(15,23,42,.055);padding:44px}
+#cert .cert-img{width:132px;height:132px;object-fit:contain}
+#cert .cert-body-text h3{font-size:24px;letter-spacing:-.025em}
+.btn-dark,.btn-book,.nav-cta,.hcf-dir-link,.cta-section .btn-white{background:#111!important;color:#fff!important;border:1px solid #111!important;border-radius:8px!important;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn-dark:hover,.btn-book:hover,.nav-cta:hover,.hcf-dir-link:hover,.cta-section .btn-white:hover{background:#333!important;border-color:#333!important;opacity:1}
+.btn-outline,.btn-ghost-w{background:#fff!important;color:#172033!important;border:1px solid #cbd5e1!important;border-radius:8px!important;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+.btn-outline:hover,.btn-ghost-w:hover{background:#f1f5f9!important;color:#172033!important}
+:where(a,button,[tabindex]):focus-visible{outline:3px solid #2455a4!important;outline-offset:3px}
+img{max-width:100%}
+.booking-modal-overlay{padding:16px}
+.booking-modal{max-height:min(92dvh,850px);border-radius:12px}
+.booking-modal-body iframe{min-height:520px}
+.dp-arrow{min-width:44px;min-height:44px}
+@media(max-width:900px){.container{padding-left:24px;padding-right:24px}.hero-top{gap:28px}#cert .cert-section-block{padding:28px}}
+@media(max-width:768px){nav{gap:12px}.nav-brand{min-width:0}.nav-name{font-size:14px}.nav-cta{min-height:44px;padding:9px 14px}.hero-top{grid-template-columns:1fr!important}.hero-sub{font-size:17px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.booking-modal-overlay{padding:8px}.booking-modal{max-height:96dvh}.booking-modal-body iframe{min-height:480px}}
+@media(max-width:520px){.container{padding-left:18px;padding-right:18px}.services-grid{grid-template-columns:1fr}.svc-card{padding:24px}.hero-actions{flex-direction:column}.hero-actions a{width:100%;justify-content:center}.dp-track{padding-left:16px;padding-right:16px}.dp-card{flex-basis:calc(100vw - 48px)!important}#cert .cert-section-block{padding:22px 18px}#cert .cert-img{width:112px;height:112px}.booking-modal-head{padding:14px 16px}.booking-modal-body iframe{min-height:450px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
+
 </style>
 </head>
 <body>
@@ -714,52 +739,52 @@ section{padding-top:96px;padding-bottom:96px}
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/E_com_Funnel.png" alt="Supplement Ecom Funnel" loading="lazy">
+          <img src="/images/E_com_Funnel.png" alt="Supplement Ecom Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">E-Commerce</span>
           <span class="dp-name">Supplement Ecom Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Fuminine_Automated_Funnel.png" alt="Feminine Automated Funnel" loading="lazy">
+          <img src="/images/Fuminine_Automated_Funnel.png" alt="Feminine Automated Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Coaching</span>
           <span class="dp-name">Feminine Automated Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Low_Ticket_SLO_Funnel.png" alt="Low Ticket SLO Funnel" loading="lazy">
+          <img src="/images/Low_Ticket_SLO_Funnel.png" alt="Low Ticket SLO Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Digital Product</span>
           <span class="dp-name">Low Ticket SLO Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/SaaS_Funnel.png" alt="SaaS Funnel" loading="lazy">
+          <img src="/images/SaaS_Funnel.png" alt="SaaS Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">SaaS</span>
           <span class="dp-name">SaaS Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Webinar_Registration_Funnel.png" alt="Webinar Registration Funnel" loading="lazy">
+          <img src="/images/Webinar_Registration_Funnel.png" alt="Webinar Registration Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Webinar</span>
           <span class="dp-name">Webinar Registration Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
     </div><!-- /dp-track -->
@@ -792,42 +817,42 @@ section{padding-top:96px;padding-bottom:96px}
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Personal_Brand_Website.png" alt="Personal Brand Website" loading="lazy">
+          <img src="/images/Personal_Brand_Website.png" alt="Personal Brand Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Personal Brand</span>
           <span class="dp-name">Personal Brand Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Premium_Roofing_Website.png" alt="Premium Roofing Website" loading="lazy">
+          <img src="/images/Premium_Roofing_Website.png" alt="Premium Roofing Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Local Business</span>
           <span class="dp-name">Premium Roofing Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Agency_Website.png" alt="Agency Website" loading="lazy">
+          <img src="/images/Agency_Website.png" alt="Agency Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Agency</span>
           <span class="dp-name">Agency Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="/images/Productivity_Coaching_Website.png" alt="Productivity Coaching Website" loading="lazy">
+          <img src="/images/Productivity_Coaching_Website.png" alt="Productivity Coaching Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Coaching</span>
           <span class="dp-name">Productivity Coaching Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
     </div>
@@ -1204,16 +1229,16 @@ function dpTrackScroll(id, dir){
     <div class="fade-up">
       <div class="section-label">Credentials</div>
       <h2>Officially Certified</h2>
-      <p class="section-sub">Verified by HighLevel Inc. through their official Admin Certification Program.</p>
+      <p class="section-sub">GoHighLevel Admin Certification credential and relevant platform capabilities.</p>
     </div>
     <div class="cert-section-block fade-up" style="transition-delay:.1s">
-      <img class="cert-img" src="/images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge">
+      <img class="cert-img" src="/images/Certified%20Admin%20Badge.png" loading="lazy" decoding="async" alt="GHL Certified Admin Badge">
       <div class="cert-divider"></div>
       <div class="cert-body-text">
         <h3>GoHighLevel Certified Admin</h3>
-        <p>Demonstrating verified expertise across the complete GoHighLevel platform — from account structure and CRM configuration to advanced automations, AI features, and agency management.</p>
+        <p>Admin Certification credential covering GoHighLevel platform administration. Explore my work samples below for practical examples of CRM setup, automations, and funnel development.</p>
         <div class="cert-tags">
-          <span class="ctag ctag-g">✓ Verified · 2026</span>
+          <span class="ctag ctag-g">GHL Admin Certification · 2026</span>
           <span class="ctag ctag-g">Advanced Automations</span>
           <span class="ctag ctag-b">AI &amp; Workflows</span>
           <span class="ctag ctag-b">Agency Management</span>
