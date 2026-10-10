@@ -581,6 +581,26 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
 
 
+/* Professional hero portrait treatment — experiment only */
+.hero .photo-frame{
+  aspect-ratio:4/5;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#0b182c;
+  box-shadow:0 18px 44px rgba(15,23,42,.13),0 3px 10px rgba(15,23,42,.06);
+}
+.hero .photo-frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 78%;
+}
+.nav-avatar{object-position:center 78%}
+@media(max-width:767px){
+  .hero .photo-frame{border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.12)}
+}
+
 /* Light corporate theme for experimental showcase sections; override legacy inline dark styles */
 #workflows,#voice-ai,#client-results{background:#f8fafc!important;border-top:1px solid #e2e8f0;color:#172033}
 #voice-ai{background:#fff!important}
