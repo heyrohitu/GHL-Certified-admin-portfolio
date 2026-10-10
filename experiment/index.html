@@ -1248,6 +1248,9 @@ function dpTrackScroll(id, dir){
 #client-results .client-video-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #dbe2ea;border-radius:12px;box-shadow:0 5px 18px rgba(15,23,42,.04)}
 #client-results .client-video-frame{width:100%;aspect-ratio:16/9;background:#f1f5f9}
 #client-results .client-video-frame iframe{display:block;width:100%;height:100%;border:0}
+/* Cover the Google Drive player external-window control without blocking playback. */
+#client-results .client-video-frame{position:relative;overflow:hidden}
+#client-results .client-video-frame::after{content:"";position:absolute;top:0;right:0;width:78px;height:84px;z-index:2;pointer-events:auto;background:transparent}
 #client-results .client-video-info{padding:20px 22px}
 #client-results .client-video-info h3{font-size:18px;line-height:1.4;color:#172033;margin:0 0 10px}
 #client-results .client-video-info a{font-size:14px;color:#2455a4;text-decoration:none}
