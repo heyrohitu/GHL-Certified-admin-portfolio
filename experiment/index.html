@@ -1222,7 +1222,7 @@ function dpTrackScroll(id, dir){
       <h2 id="client-results-title">Client Results</h2>
       <p class="section-sub">Video feedback shared by clients. Watch their experiences below.</p>
     </div>
-    <div class="client-video-grid">
+    <div class="client-video-grid" aria-label="Client feedback videos">
       <article class="client-video-card">
         <div class="client-video-frame">
           <iframe src="https://www.youtube-nocookie.com/embed/emVfiIzLkCM?rel=0" title="Client feedback video one" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -1253,7 +1253,7 @@ function dpTrackScroll(id, dir){
 #client-results .client-video-info h3{font-size:18px;line-height:1.4;color:#172033;margin:0 0 10px}
 #client-results .client-video-info a{font-size:14px;color:#2455a4;text-decoration:none}
 #client-results .client-video-info a:hover{text-decoration:underline}
-@media(max-width:720px){#client-results{padding:64px 0!important}#client-results .client-video-grid{grid-template-columns:minmax(0,340px);justify-content:center;gap:18px}}
+@media(max-width:720px){#client-results{padding:64px 0!important}#client-results .client-video-grid{display:flex;overflow-x:auto;overflow-y:hidden;gap:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent;padding:2px 18px 16px;margin-left:-18px;margin-right:-18px;overscroll-behavior-x:contain}#client-results .client-video-card{flex:0 0 min(78vw,300px);scroll-snap-align:start}#client-results .client-video-frame{max-height:none}#client-results .client-video-info{padding:14px 16px}#client-results .client-video-info h3{font-size:15px}}
 </style>
 
 <!-- CERTIFICATION -->
