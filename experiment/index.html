@@ -1212,6 +1212,7 @@ function dpTrackScroll(id, dir){
         <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Auto replies &amp; booking on WhatsApp</p>
       </div>
     </div>
+    <div class="mobile-swipe-dots always-swipe-dots" id="voiceSwipeDots" aria-label="Voice AI and Conversation AI slides"></div>
   </div>
 </section>
 
@@ -1264,6 +1265,7 @@ function dpTrackScroll(id, dir){
 .mobile-swipe-dots button{appearance:none;border:0;border-radius:50%;background:#cbd5e1;width:9px;height:9px;padding:0;cursor:pointer;transition:background .2s,transform .2s}
 .mobile-swipe-dots button[aria-current="true"]{background:#2455a4;transform:scale(1.12)}
 @media(max-width:768px){.mobile-swipe-dots{display:flex}}
+.mobile-swipe-dots.always-swipe-dots{display:flex}
 </style>
 <script>
 (function(){
@@ -1271,7 +1273,8 @@ function dpTrackScroll(id, dir){
     const section=document.getElementById(sectionId);
     const dots=document.getElementById(dotsId);
     if(!section||!dots)return;
-    const track=section.querySelector(sectionId==='workflows'?'div[style*="grid-template-columns:repeat(3"]':'.client-video-grid');
+    const selectors={workflows:'div[style*="grid-template-columns:repeat(3"]','client-results':'.client-video-grid','voice-ai':'div[style*="scroll-snap-type:x mandatory"]'};
+    const track=section.querySelector(selectors[sectionId]);
     if(!track)return;
     const cards=Array.from(track.querySelectorAll(cardSelector));
     if(!cards.length)return;
@@ -1296,6 +1299,7 @@ function dpTrackScroll(id, dir){
   }
   setupSwipeDots('workflows','workflowSwipeDots',':scope > div');
   setupSwipeDots('client-results','clientSwipeDots',':scope > article');
+  setupSwipeDots('voice-ai','voiceSwipeDots',':scope > div');
 })();
 </script>
 
