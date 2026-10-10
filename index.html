@@ -503,6 +503,83 @@ footer{border-top:1px solid var(--border);padding:28px 0}
   .ss-inner{grid-template-columns:repeat(2,1fr)}
   .ss-item:nth-child(9){border-right:none}
 }
+
+/* Experiment: clean white corporate visual system */
+:root{--white:#fff;--off:#f8fafc;--off2:#f1f5f9;--border:#e2e8f0;--border2:#cbd5e1;--text:#172033;--muted:#475569;--muted2:#64748b;--accent:#2455a4;--accent-l:#eff6ff;--accent-m:#3268b9;--blue:#2455a4;--blue-l:#eff6ff}
+body{background:#fff;color:var(--text);line-height:1.65}
+.container{max-width:1160px}
+header{background:rgba(255,255,255,.97);box-shadow:0 1px 2px rgba(15,23,42,.035)}
+.hero{padding:76px 0 64px}
+.hero-top{gap:64px}
+.hero-tag{border-radius:6px;background:#f1f5f9;letter-spacing:.07em}
+h1{font-size:clamp(42px,5vw,64px);letter-spacing:-.045em;line-height:1.12}
+.hero-sub{font-size:18px;line-height:1.75}
+h2{letter-spacing:-.035em}
+section{padding-top:96px;padding-bottom:96px}
+.btn-dark,.nav-cta,.hcf-dir-link{background:#2455a4;color:#fff}
+.btn-dark:hover,.nav-cta:hover,.hcf-dir-link:hover{background:#194482;opacity:1}
+.btn-outline{background:#fff;border-color:#cbd5e1}
+.photo-frame{border-radius:12px;box-shadow:0 12px 36px rgba(15,23,42,.08)}
+.hero-cert-full{border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 6px 22px rgba(15,23,42,.04)}
+.hero-cert-full::before{background:#2455a4;height:2px}
+.services-grid,.process-steps{gap:16px;background:transparent;border:0;overflow:visible}
+.svc-card,.p-step{border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 3px 14px rgba(15,23,42,.025)}
+.svc-card:hover,.p-step:hover{background:#fff;border-color:#b9c9dd;box-shadow:0 10px 24px rgba(15,23,42,.06)}
+.video-card,.cert-section-block{border-radius:12px;box-shadow:0 5px 20px rgba(15,23,42,.04)}
+.chip{border-radius:6px}
+.cta-section{background:#f1f5f9;color:#172033;border-top:1px solid #e2e8f0}
+.cta-section .section-label{color:#64748b}
+.cta-section h2{color:#172033}
+.cta-section h2 em{color:#2455a4}
+.cta-section .section-sub{color:#475569}
+.cta-section .btn-white{background:#2455a4;color:#fff}
+#workflows,#voice-ai,#client-results{display:none!important}
+@media(max-width:840px){.hero{padding:48px 0}.hero-top{gap:30px}}
+@media(max-width:520px){.container{padding-left:20px;padding-right:20px}.hero{padding:36px 0 44px}section{padding-top:64px;padding-bottom:64px}.services-grid,.process-steps{gap:12px}}
+
+
+/* Experiment: black primary buttons */
+.btn-dark,.nav-cta,.hcf-dir-link,.cta-section .btn-white{background:#111111!important;color:#ffffff!important}
+.btn-dark:hover,.nav-cta:hover,.hcf-dir-link:hover,.cta-section .btn-white:hover{background:#333333!important;color:#ffffff!important;opacity:1}
+
+/* Experiment: accessible contact contrast on light background */
+.cta-section .contact-list a{color:#172033!important;text-decoration:none}
+.cta-section .contact-list a:hover{color:#111!important;text-decoration:underline}
+.cta-section .contact-list li{color:#172033}
+.cta-section .cl-ico{color:#172033!important;border-color:#cbd5e1!important;background:#fff!important}
+.cta-section .cl-ico svg{stroke:#172033!important}
+.cta-section .social-btn{color:#172033!important;background:#fff!important;border:1px solid #cbd5e1!important}
+.cta-section .social-btn:hover{background:#e2e8f0!important;border-color:#94a3b8!important;color:#111!important}
+.cta-section .social-btn svg{fill:currentColor}
+
+/* Experiment: restrained, consistent service iconography */
+#services .svc-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;color:#243247;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:20px}
+#services .svc-icon svg{width:23px;height:23px;display:block}
+
+/* Experiment polish: portfolio previews, credential, CTA, responsive behavior */
+#funnels .dp-card,#websites .dp-card{border-radius:12px;box-shadow:0 4px 16px rgba(15,23,42,.04);border-color:#dbe2ea}
+#funnels .dp-meta,#websites .dp-meta{min-height:122px;gap:7px;padding:19px 20px}
+#funnels .dp-name,#websites .dp-name{font-weight:650;color:#172033;line-height:1.4}
+.dp-preview-note{font-size:12px;color:#64748b;line-height:1.4;margin-top:3px}
+#funnels .dp-tag,#websites .dp-tag{align-self:flex-start}
+#cert .cert-section-block{border:1px solid #cbd5e1;box-shadow:0 10px 35px rgba(15,23,42,.055);padding:44px}
+#cert .cert-img{width:132px;height:132px;object-fit:contain}
+#cert .cert-body-text h3{font-size:24px;letter-spacing:-.025em}
+.btn-dark,.btn-book,.nav-cta,.hcf-dir-link,.cta-section .btn-white{background:#111!important;color:#fff!important;border:1px solid #111!important;border-radius:8px!important;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn-dark:hover,.btn-book:hover,.nav-cta:hover,.hcf-dir-link:hover,.cta-section .btn-white:hover{background:#333!important;border-color:#333!important;opacity:1}
+.btn-outline,.btn-ghost-w{background:#fff!important;color:#172033!important;border:1px solid #cbd5e1!important;border-radius:8px!important;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+.btn-outline:hover,.btn-ghost-w:hover{background:#f1f5f9!important;color:#172033!important}
+:where(a,button,[tabindex]):focus-visible{outline:3px solid #2455a4!important;outline-offset:3px}
+img{max-width:100%}
+.booking-modal-overlay{padding:16px}
+.booking-modal{max-height:min(92dvh,850px);border-radius:12px}
+.booking-modal-body iframe{min-height:520px}
+.dp-arrow{min-width:44px;min-height:44px}
+@media(max-width:900px){.container{padding-left:24px;padding-right:24px}.hero-top{gap:28px}#cert .cert-section-block{padding:28px}}
+@media(max-width:768px){nav{gap:12px}.nav-brand{min-width:0}.nav-name{font-size:14px}.nav-cta{min-height:44px;padding:9px 14px}.hero-top{grid-template-columns:1fr!important}.hero-sub{font-size:17px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.booking-modal-overlay{padding:8px}.booking-modal{max-height:96dvh}.booking-modal-body iframe{min-height:480px}}
+@media(max-width:520px){.container{padding-left:18px;padding-right:18px}.services-grid{grid-template-columns:1fr}.svc-card{padding:24px}.hero-actions{flex-direction:column}.hero-actions a{width:100%;justify-content:center}.dp-track{padding-left:16px;padding-right:16px}.dp-card{flex-basis:calc(100vw - 48px)!important}#cert .cert-section-block{padding:22px 18px}#cert .cert-img{width:112px;height:112px}.booking-modal-head{padding:14px 16px}.booking-modal-body iframe{min-height:450px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
+
 </style>
 </head>
 <body>
@@ -512,7 +589,7 @@ footer{border-top:1px solid var(--border);padding:28px 0}
   <div class="container">
     <nav>
       <div class="nav-brand">
-        <img class="nav-avatar" src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay">
+        <img class="nav-avatar" src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay">
         <span class="nav-name">Rohit Upadhyay</span>
       </div>
       <ul class="nav-links">
@@ -525,7 +602,7 @@ footer{border-top:1px solid var(--border);padding:28px 0}
       </ul>
       <div style="display:flex;align-items:center;gap:10px">
         <div class="nav-cert-badge">
-          <img src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin" class="nav-cert-img">
+          <img src="/images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin" class="nav-cert-img">
           <div class="nav-cert-text">
             <div class="nav-cert-title">GHL Certified Admin</div>
             <div class="nav-cert-sub">HighLevel Inc. · 2026</div>
@@ -547,7 +624,7 @@ footer{border-top:1px solid var(--border);padding:28px 0}
         <p class="hero-sub">I build <strong>complete business systems</strong> on GoHighLevel — automations, funnels, AI agents, CRM setups and white-label agency solutions that actually work.</p>
         <div class="hero-photo-col hero-photo-mobile">
           <div class="photo-frame">
-            <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+            <img src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
           </div>
         </div>
         <div class="hero-actions">
@@ -557,13 +634,13 @@ footer{border-top:1px solid var(--border);padding:28px 0}
       </div>
       <div class="hero-photo-col hero-photo-desktop">
         <div class="photo-frame">
-          <img src="images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+          <img src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
         </div>
       </div>
     </div>
     <div class="hero-cert-full fade-up" style="transition-delay:.18s">
       <div class="hcf-left">
-        <img src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge" class="hcf-badge-img">
+        <img src="/images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge" class="hcf-badge-img">
         <div class="hcf-text">
           <div class="hcf-eyebrow">Official Certification</div>
           <div class="hcf-title">GoHighLevel Certified Admin</div>
@@ -597,47 +674,47 @@ footer{border-top:1px solid var(--border);padding:28px 0}
     </div>
     <div class="services-grid fade-up" style="transition-delay:.1s">
       <div class="svc-card">
-        <div class="svc-icon">⚡</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
         <div class="svc-name">GHL Setup &amp; Onboarding</div>
         <div class="svc-desc">Full account configuration, sub-accounts, pipelines, team access and custom setup from the ground up.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🔁</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/><path d="M10 7h4a3 3 0 0 1 3 3v4M14 17h-4a3 3 0 0 1-3-3v-4"/></svg></div>
         <div class="svc-name">Automation &amp; Workflows</div>
         <div class="svc-desc">Multi-step automations with smart triggers, conditional logic and integrations that run your business on autopilot.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🎯</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg></div>
         <div class="svc-name">Funnel Building</div>
         <div class="svc-desc">High-converting sales funnels, landing pages and checkout flows designed to turn visitors into customers.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">💼</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 13h6M16 10h2M16 14h2"/></svg></div>
         <div class="svc-name">CRM Management</div>
         <div class="svc-desc">Lead tracking, contact segmentation, custom fields and pipeline management built to your sales process.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">📲</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div>
         <div class="svc-name">Email &amp; SMS Marketing</div>
         <div class="svc-desc">Broadcast campaigns, drip sequences, A/B testing and automated follow-ups that convert leads.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🏷️</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V4h8v3M4 12h16"/></svg></div>
         <div class="svc-name">White-label Agency</div>
         <div class="svc-desc">Fully branded GHL setups — custom domains, SMTP, billing and branded apps for agencies and resellers.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🌐</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a16 16 0 0 1 0 18M12 3a16 16 0 0 0 0 18"/></svg></div>
         <div class="svc-name">Website Development</div>
         <div class="svc-desc">Professional business websites built natively inside GHL — fast, mobile-ready and fully integrated.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🤖</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 10h.01M15 10h.01M8 15c2 2 6 2 8 0M12 2v2"/></svg></div>
         <div class="svc-name">AI Agents</div>
         <div class="svc-desc">Conversational AI bots for lead capture, customer support and automated follow-up — 24/7.</div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">📊</div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V11M10 19V5M16 19v-8M22 19V8"/><path d="M2 20h21"/></svg></div>
         <div class="svc-name">Reporting &amp; Analytics</div>
         <div class="svc-desc">Custom dashboards, attribution tracking and performance reports to make data-driven decisions.</div>
       </div>
@@ -662,52 +739,52 @@ footer{border-top:1px solid var(--border);padding:28px 0}
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/E_com_Funnel.png" alt="Supplement Ecom Funnel" loading="lazy">
+          <img src="/images/E_com_Funnel.png" alt="Supplement Ecom Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">E-Commerce</span>
           <span class="dp-name">Supplement Ecom Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Fuminine_Automated_Funnel.png" alt="Feminine Automated Funnel" loading="lazy">
+          <img src="/images/Fuminine_Automated_Funnel.png" alt="Feminine Automated Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Coaching</span>
           <span class="dp-name">Feminine Automated Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Low_Ticket_SLO_Funnel.png" alt="Low Ticket SLO Funnel" loading="lazy">
+          <img src="/images/Low_Ticket_SLO_Funnel.png" alt="Low Ticket SLO Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Digital Product</span>
           <span class="dp-name">Low Ticket SLO Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/SaaS_Funnel.png" alt="SaaS Funnel" loading="lazy">
+          <img src="/images/SaaS_Funnel.png" alt="SaaS Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">SaaS</span>
           <span class="dp-name">SaaS Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Webinar_Registration_Funnel.png" alt="Webinar Registration Funnel" loading="lazy">
+          <img src="/images/Webinar_Registration_Funnel.png" alt="Webinar Registration Funnel — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Webinar</span>
           <span class="dp-name">Webinar Registration Funnel</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
     </div><!-- /dp-track -->
@@ -740,42 +817,42 @@ footer{border-top:1px solid var(--border);padding:28px 0}
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Personal_Brand_Website.png" alt="Personal Brand Website" loading="lazy">
+          <img src="/images/Personal_Brand_Website.png" alt="Personal Brand Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Personal Brand</span>
           <span class="dp-name">Personal Brand Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Premium_Roofing_Website.png" alt="Premium Roofing Website" loading="lazy">
+          <img src="/images/Premium_Roofing_Website.png" alt="Premium Roofing Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Local Business</span>
           <span class="dp-name">Premium Roofing Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Agency_Website.png" alt="Agency Website" loading="lazy">
+          <img src="/images/Agency_Website.png" alt="Agency Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Agency</span>
           <span class="dp-name">Agency Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
       <div class="dp-card">
         <div class="dp-img-wrap">
-          <img src="images/Productivity_Coaching_Website.png" alt="Productivity Coaching Website" loading="lazy">
+          <img src="/images/Productivity_Coaching_Website.png" alt="Productivity Coaching Website — portfolio project screenshot" loading="lazy" decoding="async">
         </div>
         <div class="dp-meta">
           <span class="dp-tag">Coaching</span>
           <span class="dp-name">Productivity Coaching Website</span>
-        </div>
+        <span class="dp-preview-note">Portfolio preview · Full-page screenshot</span></div>
       </div>
 
     </div>
@@ -1036,7 +1113,7 @@ function dpTrackScroll(id, dir){
 </script>
 
 <!-- WORKFLOWS & ADVANCED AUTOMATIONS -->
-<section id="workflows" style="background:#0a0a0a;padding:80px 20px;display:none;">
+<section id="workflows" style="background:#0a0a0a;padding:80px 20px;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:48px;">
       <div style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:12px;">Automation Systems</div>
@@ -1087,7 +1164,7 @@ function dpTrackScroll(id, dir){
 </section>
 
 <!-- VOICE AI & CONVERSATION AI SECTION -->
-<section id="voice-ai" style="background:#0a0a0a;padding:80px 20px;display:none;">
+<section id="voice-ai" style="background:#0a0a0a;padding:80px 20px;">
   <div style="max-width:1200px;margin:0 auto;">
     <h2 style="text-align:center;font-size:42px;line-height:1.15;font-weight:600;letter-spacing:-.025em;color:#fff;margin:0 0 48px;">Voice AI &amp; Conversation AI in Action</h2>
 
@@ -1120,7 +1197,7 @@ function dpTrackScroll(id, dir){
 </section>
 
 <!-- CLIENT RESULTS -->
-<section id="client-results" style="background:#0a0a0a;padding:80px 20px;display:none;">
+<section id="client-results" style="background:#0a0a0a;padding:80px 20px;">
 <div style="max-width:1200px;margin:0 auto;">
 <h2 style="text-align:center;font-size:42px;color:#fff;margin:0 0 12px;">Client Results</h2>
 <p style="text-align:center;color:#fff;opacity:.7;font-size:18px;margin:0 0 48px;">Real feedback from real clients</p>
@@ -1152,16 +1229,16 @@ function dpTrackScroll(id, dir){
     <div class="fade-up">
       <div class="section-label">Credentials</div>
       <h2>Officially Certified</h2>
-      <p class="section-sub">Verified by HighLevel Inc. through their official Admin Certification Program.</p>
+      <p class="section-sub">GoHighLevel Admin Certification credential and relevant platform capabilities.</p>
     </div>
     <div class="cert-section-block fade-up" style="transition-delay:.1s">
-      <img class="cert-img" src="images/Certified%20Admin%20Badge.png" alt="GHL Certified Admin Badge">
+      <img class="cert-img" src="/images/Certified%20Admin%20Badge.png" loading="lazy" decoding="async" alt="GHL Certified Admin Badge">
       <div class="cert-divider"></div>
       <div class="cert-body-text">
         <h3>GoHighLevel Certified Admin</h3>
-        <p>Demonstrating verified expertise across the complete GoHighLevel platform — from account structure and CRM configuration to advanced automations, AI features, and agency management.</p>
+        <p>Admin Certification credential covering GoHighLevel platform administration. Explore my work samples below for practical examples of CRM setup, automations, and funnel development.</p>
         <div class="cert-tags">
-          <span class="ctag ctag-g">✓ Verified · 2026</span>
+          <span class="ctag ctag-g">GHL Admin Certification · 2026</span>
           <span class="ctag ctag-g">Advanced Automations</span>
           <span class="ctag ctag-b">AI &amp; Workflows</span>
           <span class="ctag ctag-b">Agency Management</span>
