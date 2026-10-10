@@ -581,6 +581,11 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
 
 
+/* Compact brand mark in the experiment navigation */
+.nav-logo-only{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex-shrink:0}
+.nav-header-logo{display:block;width:52px;height:52px;object-fit:contain;border-radius:8px}
+@media(max-width:767px){.nav-header-logo{width:44px;height:44px}}
+
 /* Professional hero portrait treatment — experiment only */
 .hero .photo-frame{
   aspect-ratio:4/5;
@@ -626,10 +631,9 @@ img{max-width:100%}
 <header>
   <div class="container">
     <nav>
-      <div class="nav-brand">
-        <img class="nav-avatar" src="https://raw.githubusercontent.com/heyrohitu/GHL-Certified-admin-portfolio/experiment/images/IMG_0506%201.png" alt="Rohit Upadhyay">
-        <span class="nav-name">Rohit Upadhyay</span>
-      </div>
+      <a class="nav-brand nav-logo-only" href="#top" aria-label="Rohit Upadhyay — back to top">
+        <img class="nav-header-logo" src="/images/three-arrows-header-logo.svg" alt="Rohit Upadhyay logo" width="52" height="52">
+      </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
