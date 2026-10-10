@@ -580,6 +580,24 @@ img{max-width:100%}
 @media(max-width:520px){.container{padding-left:18px;padding-right:18px}.services-grid{grid-template-columns:1fr}.svc-card{padding:24px}.hero-actions{flex-direction:column}.hero-actions a{width:100%;justify-content:center}.dp-track{padding-left:16px;padding-right:16px}.dp-card{flex-basis:calc(100vw - 48px)!important}#cert .cert-section-block{padding:22px 18px}#cert .cert-img{width:112px;height:112px}.booking-modal-head{padding:14px 16px}.booking-modal-body iframe{min-height:450px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
 
+
+/* Light corporate theme for experimental showcase sections; override legacy inline dark styles */
+#workflows,#voice-ai,#client-results{background:#f8fafc!important;border-top:1px solid #e2e8f0;color:#172033}
+#voice-ai{background:#fff!important}
+#workflows h2,#voice-ai h2,#client-results h2{color:#172033!important;letter-spacing:-.025em}
+#workflows h3,#voice-ai h3,#client-results h3{color:#172033!important}
+#workflows p,#voice-ai p,#client-results p{color:#475569!important;opacity:1!important}
+#workflows > div > div:first-child > div:first-child{color:#2455a4!important}
+#workflows > div > div:nth-child(2) > div,
+#voice-ai > div > div > div,
+#client-results > div > div:nth-child(3) > div{background:#fff!important;border:1px solid #dbe2ea!important;border-radius:12px!important;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+#workflows > div > div:nth-child(2) > div > div:first-child,
+#voice-ai > div > div > div > div:first-child{background:#f1f5f9!important;border:1px dashed #cbd5e1;color:#64748b!important}
+#client-results video{background:#f1f5f9}
+#client-results [style*="color:#fff"]{color:#172033!important}
+#voice-ai > div > div{scrollbar-color:#cbd5e1 transparent!important}
+@media(max-width:768px){#voice-ai > div > div > div{min-width:min(310px,85vw)!important}#workflows,#voice-ai,#client-results{padding:64px 18px!important}}
+
 </style>
 </head>
 <body>
