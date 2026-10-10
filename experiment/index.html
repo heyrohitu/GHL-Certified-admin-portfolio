@@ -581,16 +581,12 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
 
 
-/* Compact brand mark in the experiment navigation */
-.nav-logo-only{display:inline-flex;align-items:center;justify-content:flex-start;gap:11px;text-decoration:none;flex-shrink:0;min-width:224px}
-.nav-header-logo{display:block;width:54px;height:54px;object-fit:contain;border-radius:7px;flex-shrink:0}
-.nav-logo-wordmark{display:flex;flex-direction:column;justify-content:center;gap:3px;white-space:nowrap}
-.nav-logo-title{font-size:16px;font-weight:750;line-height:1.1;letter-spacing:.045em;color:#101827}
-.nav-logo-caption{font-size:9px;font-weight:650;letter-spacing:.16em;line-height:1.3;color:#64748b}
-@media(max-width:1024px){.nav-logo-only{min-width:0}.nav-logo-title{font-size:14px}}
-@media(max-width:767px){.nav-logo-only{gap:8px}.nav-header-logo{width:43px;height:43px}.nav-logo-title{font-size:12px}.nav-logo-caption{font-size:8px;letter-spacing:.09em}}
-@media(max-width:380px){.nav-logo-caption{display:none}.nav-logo-title{font-size:11px}}
-
+/* Full uploaded logo in experiment header — original aspect ratio preserved */
+.nav-logo-only{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;text-decoration:none;line-height:0}
+.nav-header-logo{display:block;width:230px;height:auto;max-height:52px;object-fit:contain;object-position:left center;flex-shrink:0}
+@media(max-width:1024px){.nav-header-logo{width:195px;max-height:45px}}
+@media(max-width:767px){.nav-header-logo{width:170px;max-height:40px}}
+@media(max-width:380px){.nav-header-logo{width:146px;max-height:34px}}
 
 /* Professional hero portrait treatment — experiment only */
 .hero .photo-frame{
@@ -638,7 +634,7 @@ img{max-width:100%}
   <div class="container">
     <nav>
       <a class="nav-brand nav-logo-only" href="#top" aria-label="Rohit Upadhyay — back to top">
-        <img class="nav-header-logo" src="/images/three-arrows-header-logo.svg" alt="" width="54" height="54"><span class="nav-logo-wordmark"><span class="nav-logo-title">ROHIT UPADHYAY</span><span class="nav-logo-caption">GHL CERTIFIED ADMIN</span></span>
+        <img class="nav-header-logo" src="https://raw.githubusercontent.com/heyrohitu/GHL-Certified-admin-portfolio/experiment/images/idnUrjuiFj_logos.png" alt="Rohit Upadhyay brand logo" width="230" height="52">
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
