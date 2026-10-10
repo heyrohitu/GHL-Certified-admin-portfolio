@@ -588,6 +588,13 @@ img{max-width:100%}
 @media(max-width:767px){.nav-header-logo{width:170px;max-height:40px}}
 @media(max-width:380px){.nav-header-logo{width:146px;max-height:34px}}
 
+/* Polished numbered steps for the experiment process cards */
+.process-steps{align-items:stretch}
+.process-steps .p-step{display:flex;flex-direction:column;align-items:flex-start;height:100%}
+.process-steps .p-num{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;min-width:46px;margin:0 0 22px;padding:0;border-radius:50%;background:#e9f0fb;color:#2355a4;font-family:var(--mono);font-size:15px;font-weight:650;letter-spacing:0;line-height:1;font-variant-numeric:tabular-nums}
+.process-steps .p-title{margin-bottom:12px}
+@media(max-width:767px){.process-steps .p-num{width:42px;height:42px;min-width:42px;margin-bottom:18px;font-size:14px}}
+
 /* Professional hero portrait treatment — experiment only */
 .hero .photo-frame{
   aspect-ratio:4/5;
@@ -1363,10 +1370,10 @@ function dpTrackScroll(id, dir){
       <p class="section-sub">A clear, structured approach — so you always know what's happening and why.</p>
     </div>
     <div class="process-steps fade-up" style="transition-delay:.1s">
-      <div class="p-step"><div class="p-num">01 /</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
-      <div class="p-step"><div class="p-num">02 /</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
-      <div class="p-step"><div class="p-num">03 /</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
-      <div class="p-step"><div class="p-num">04 /</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 1">01</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 2">02</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 3">03</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 4">04</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
     </div>
   </div>
 </section>
