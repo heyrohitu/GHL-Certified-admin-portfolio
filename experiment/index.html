@@ -1170,6 +1170,7 @@ function dpTrackScroll(id, dir){
         <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Win back cold leads</p>
       </div>
     </div>
+    <div class="mobile-swipe-dots" id="workflowSwipeDots" aria-label="Workflow slides"></div>
   </div>
   <style>
     @media (max-width: 768px) {
@@ -1240,6 +1241,7 @@ function dpTrackScroll(id, dir){
         </div>
       </article>
     </div>
+    <div class="mobile-swipe-dots" id="clientSwipeDots" aria-label="Client video slides"></div>
   </div>
 </section>
 <style>
@@ -1255,6 +1257,47 @@ function dpTrackScroll(id, dir){
 #client-results .client-video-info a:hover{text-decoration:underline}
 @media(max-width:720px){#client-results{padding:64px 0!important}#client-results .client-video-grid{display:flex;overflow-x:auto;overflow-y:hidden;gap:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent;padding:2px 18px 16px;margin-left:-18px;margin-right:-18px;overscroll-behavior-x:contain}#client-results .client-video-card{flex:0 0 min(78vw,300px);scroll-snap-align:start}#client-results .client-video-frame{max-height:none}#client-results .client-video-info{padding:14px 16px}#client-results .client-video-info h3{font-size:15px}}
 </style>
+
+
+<style>
+.mobile-swipe-dots{display:none;align-items:center;justify-content:center;gap:9px;margin:20px auto 0}
+.mobile-swipe-dots button{appearance:none;border:0;border-radius:50%;background:#cbd5e1;width:9px;height:9px;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+.mobile-swipe-dots button[aria-current="true"]{background:#2455a4;transform:scale(1.12)}
+@media(max-width:768px){.mobile-swipe-dots{display:flex}}
+</style>
+<script>
+(function(){
+  function setupSwipeDots(sectionId, dotsId, cardSelector){
+    const section=document.getElementById(sectionId);
+    const dots=document.getElementById(dotsId);
+    if(!section||!dots)return;
+    const track=section.querySelector(sectionId==='workflows'?'div[style*="grid-template-columns:repeat(3"]':'.client-video-grid');
+    if(!track)return;
+    const cards=Array.from(track.querySelectorAll(cardSelector));
+    if(!cards.length)return;
+    cards.forEach((card,index)=>{
+      const dot=document.createElement('button');
+      dot.type='button';
+      dot.setAttribute('aria-label','Go to slide '+(index+1));
+      dot.addEventListener('click',()=>track.scrollTo({left:card.offsetLeft-cards[0].offsetLeft,behavior:'smooth'}));
+      dots.appendChild(dot);
+    });
+    function sync(){
+      let nearest=0,dist=Infinity;
+      cards.forEach((card,index)=>{
+        const d=Math.abs(card.getBoundingClientRect().left-track.getBoundingClientRect().left);
+        if(d<dist){dist=d;nearest=index}
+      });
+      Array.from(dots.children).forEach((dot,index)=>dot.setAttribute('aria-current',index===nearest?'true':'false'));
+    }
+    track.addEventListener('scroll',sync,{passive:true});
+    window.addEventListener('resize',sync);
+    sync();
+  }
+  setupSwipeDots('workflows','workflowSwipeDots',':scope > div');
+  setupSwipeDots('client-results','clientSwipeDots',':scope > article');
+})();
+</script>
 
 <!-- CERTIFICATION -->
 <section id="cert">
