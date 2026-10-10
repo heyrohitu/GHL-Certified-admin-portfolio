@@ -1215,31 +1215,47 @@ function dpTrackScroll(id, dir){
 </section>
 
 <!-- CLIENT RESULTS -->
-<section id="client-results" style="background:#0a0a0a;padding:80px 20px;">
-<div style="max-width:1200px;margin:0 auto;">
-<h2 style="text-align:center;font-size:42px;color:#fff;margin:0 0 12px;">Client Results</h2>
-<p style="text-align:center;color:#fff;opacity:.7;font-size:18px;margin:0 0 48px;">Real feedback from real clients</p>
-<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_1"><source src="VIDEO_LINK_1" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_2"><source src="VIDEO_LINK_2" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_3"><source src="VIDEO_LINK_3" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-</div>
-</div>
-<style>
-#client-results > div > div:last-child > div{transition:transform .2s ease;}
-#client-results > div > div:last-child > div:hover{transform:scale(1.02);}
-@media(max-width:768px){#client-results{padding:64px 20px!important;}#client-results h2{font-size:34px!important;}#client-results > div > div:last-child{grid-template-columns:1fr!important;}}
-</style>
+<section id="client-results" aria-labelledby="client-results-title">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Client Feedback</div>
+      <h2 id="client-results-title">Client Results</h2>
+      <p class="section-sub">Video feedback shared by clients. Watch their experiences below.</p>
+    </div>
+    <div class="client-video-grid">
+      <article class="client-video-card">
+        <div class="client-video-frame">
+          <iframe src="https://drive.google.com/file/d/1srLt_GhoOP30k1AwHP8RfbTkkgQw-I6W/preview" title="Client feedback video one" loading="lazy" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="client-video-info">
+          <h3>Client Feedback — Video 01</h3>
+          <a href="https://drive.google.com/file/d/1srLt_GhoOP30k1AwHP8RfbTkkgQw-I6W/view" target="_blank" rel="noopener noreferrer">Open video in Google Drive ↗</a>
+        </div>
+      </article>
+      <article class="client-video-card">
+        <div class="client-video-frame">
+          <iframe src="https://drive.google.com/file/d/1e7kwbSEeyZmUCBSWwdkb8TR93UYXyJvg/preview" title="Client feedback video two" loading="lazy" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="client-video-info">
+          <h3>Client Feedback — Video 02</h3>
+          <a href="https://drive.google.com/file/d/1e7kwbSEeyZmUCBSWwdkb8TR93UYXyJvg/view" target="_blank" rel="noopener noreferrer">Open video in Google Drive ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
+<style>
+#client-results{padding:88px 0!important;background:#f8fafc!important;border-top:1px solid #e2e8f0}
+#client-results .client-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+#client-results .client-video-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #dbe2ea;border-radius:12px;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+#client-results .client-video-frame{width:100%;aspect-ratio:16/9;background:#f1f5f9}
+#client-results .client-video-frame iframe{display:block;width:100%;height:100%;border:0}
+#client-results .client-video-info{padding:20px 22px}
+#client-results .client-video-info h3{font-size:18px;line-height:1.4;color:#172033;margin:0 0 10px}
+#client-results .client-video-info a{font-size:14px;color:#2455a4;text-decoration:none}
+#client-results .client-video-info a:hover{text-decoration:underline}
+@media(max-width:720px){#client-results{padding:64px 0!important}#client-results .client-video-grid{grid-template-columns:1fr;gap:18px}}
+</style>
 
 <!-- CERTIFICATION -->
 <section id="cert">
