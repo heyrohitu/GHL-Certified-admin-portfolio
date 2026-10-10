@@ -1174,7 +1174,7 @@ function dpTrackScroll(id, dir){
   <style>
     @media (max-width: 768px) {
       #workflows { padding:64px 20px !important; }
-      #workflows > div > div:last-child { grid-template-columns:1fr !important; }
+      #workflows > div > div:nth-child(2) { display:flex !important;grid-template-columns:none !important;overflow-x:auto;overflow-y:hidden;gap:14px !important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent;padding:2px 4px 18px;overscroll-behavior-x:contain; }\n      #workflows > div > div:nth-child(2) > div { flex:0 0 min(78vw,300px);scroll-snap-align:start;min-width:0; }
       #workflows h2 { font-size:30px !important; }
       #workflows p { font-size:17px !important; }
     }
