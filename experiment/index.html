@@ -596,6 +596,17 @@ img{max-width:100%}
 @media(max-width:900px){.hero .hero-left h1{font-size:clamp(32px,5vw,45px)}}
 @media(max-width:520px){.hero .hero-left h1{font-size:clamp(31px,8vw,38px);line-height:1.16;letter-spacing:-.035em}.hero .hero-sub{font-size:16px;line-height:1.65;margin-bottom:25px}.hero .hero-actions{align-items:stretch}}
 
+/* Short, readable hero headline for small screens without altering desktop copy */
+.hero-heading-mobile{display:none}
+@media(max-width:767px){
+  .hero-heading-desktop{display:none}
+  .hero-heading-mobile{display:block}
+  .hero .hero-left h1{font-size:clamp(30px,7.5vw,39px);line-height:1.17;letter-spacing:-.035em;text-wrap:balance;max-width:580px;margin-left:auto;margin-right:auto}
+}
+@media(max-width:380px){
+  .hero .hero-left h1{font-size:clamp(28px,7.7vw,31px);line-height:1.19}
+}
+
 /* Polished numbered steps for the experiment process cards */
 .process-steps{align-items:stretch}
 .process-steps .p-step{display:flex;flex-direction:column;align-items:flex-start;height:100%}
@@ -683,7 +694,7 @@ img{max-width:100%}
     <div class="hero-top fade-up">
       <div class="hero-left">
         <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Certified Admin</div>
-        <h1>I Build <em>GoHighLevel Systems</em> That Help Businesses Capture, Follow Up With &amp; Book More Leads.</h1>
+        <h1><span class="hero-heading-desktop">I Build <em>GoHighLevel Systems</em> That Help Businesses Capture, Follow Up With &amp; Book More Leads.</span><span class="hero-heading-mobile">I Build <em>GoHighLevel Systems</em> That Capture Leads &amp; Book Appointments.</span></h1>
         <p class="hero-sub">I help agencies and service businesses set up <strong>funnels, CRM automations, Conversation AI and Voice AI agents</strong> — connecting lead capture, follow-up and appointment booking into one streamlined system.</p>
         <div class="hero-photo-col hero-photo-mobile">
           <div class="photo-frame">
