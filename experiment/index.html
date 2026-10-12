@@ -596,6 +596,13 @@ img{max-width:100%}
 @media(max-width:900px){.hero .hero-left h1{font-size:clamp(32px,5vw,45px)}}
 @media(max-width:520px){.hero .hero-left h1{font-size:clamp(31px,8vw,38px);line-height:1.16;letter-spacing:-.035em}.hero .hero-sub{font-size:16px;line-height:1.65;margin-bottom:25px}.hero .hero-actions{align-items:stretch}}
 
+/* Reduce excess space above mobile hero headline. */
+@media(max-width:767px){
+  .hero{padding-top:16px}
+  .hero .hero-tag{margin-bottom:12px}
+}
+@media(max-width:380px){.hero{padding-top:12px}}
+
 /* Short, readable hero headline for small screens without altering desktop copy */
 .hero-heading-mobile{display:none}
 @media(max-width:767px){
