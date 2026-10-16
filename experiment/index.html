@@ -663,6 +663,11 @@ img{max-width:100%}
   header .nav-cert-badge{display:none!important}
 }
 /* Experiment-only A2P registration proof */
+.a2p-screenshot-link{display:block;margin:24px 0 0 74px;text-decoration:none;color:var(--accent);font-weight:600;font-size:14px}
+.a2p-screenshot-link img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border);box-shadow:0 6px 24px rgba(0,0,0,.07);margin-bottom:10px}
+.a2p-screenshot-link:hover span{text-decoration:underline}
+@media(max-width:768px){.a2p-screenshot-link{margin-left:0}}
+
 .a2p-proof-card{margin-top:18px;padding:28px 32px;border:1px solid rgba(26,107,74,.22);border-radius:16px;background:linear-gradient(125deg,#f3faf6,#fff 72%)}
 .a2p-proof-content{display:flex;align-items:flex-start;gap:20px}
 .a2p-proof-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;flex:0 0 54px;border-radius:15px;background:#d9f4e3;color:#157347;font-size:26px;font-weight:700}
@@ -1407,6 +1412,10 @@ function dpTrackScroll(id, dir){
           <div class="cert-tags"><span class="ctag ctag-g">Brand Approved</span><span class="ctag ctag-g">Campaign Approved</span><span class="ctag ctag-b">U.S. Business SMS</span></div>
         </div>
       </div>
+      <a class="a2p-screenshot-link" href="/images/A2P%20Approved.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size GoHighLevel A2P registration approval screenshot">
+        <img src="/images/A2P%20Approved.png" alt="GoHighLevel A2P Messaging brand and campaign registration statuses both approved" loading="lazy" decoding="async">
+        <span>View full approval screenshot ↗</span>
+      </a>
       <p class="a2p-proof-note">Approval evidence available upon request. Registration approval is account-specific and does not guarantee message delivery.</p>
     </div>
   </div>
