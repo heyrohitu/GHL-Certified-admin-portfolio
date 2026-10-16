@@ -662,6 +662,15 @@ img{max-width:100%}
 @media (max-width:1024px){
   header .nav-cert-badge{display:none!important}
 }
+/* Experiment-only A2P registration proof */
+.a2p-proof-card{margin-top:18px;padding:28px 32px;border:1px solid rgba(26,107,74,.22);border-radius:16px;background:linear-gradient(125deg,#f3faf6,#fff 72%)}
+.a2p-proof-content{display:flex;align-items:flex-start;gap:20px}
+.a2p-proof-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;flex:0 0 54px;border-radius:15px;background:#d9f4e3;color:#157347;font-size:26px;font-weight:700}
+.a2p-proof-card h3{font-size:21px;line-height:1.45;color:var(--text);margin:0 0 8px;font-weight:650}
+.a2p-proof-card p{font-size:16px;line-height:1.7;color:var(--muted);margin:0 0 16px}
+.a2p-status{display:inline-block;vertical-align:middle;margin-left:8px;padding:4px 10px;border-radius:30px;background:#dcfce7;color:#166534;font-size:12px;font-weight:650;white-space:nowrap}
+.a2p-proof-card .a2p-proof-note{font-size:12px;line-height:1.6;margin:18px 0 0 74px;color:var(--muted)}
+@media(max-width:768px){.a2p-proof-card{padding:22px 18px}.a2p-proof-content{flex-direction:column;gap:14px}.a2p-proof-card h3{font-size:19px}.a2p-status{margin:7px 0 0}.a2p-proof-card .a2p-proof-note{margin-left:0}}
 </style>
 </head>
 <body>
@@ -1387,6 +1396,18 @@ function dpTrackScroll(id, dir){
           <span class="ctag ctag-b">Agency Management</span>
         </div>
       </div>
+    </div>
+    <div class="a2p-proof-card fade-up" style="transition-delay:.16s">
+      <div class="a2p-proof-content">
+        <div class="a2p-proof-icon" aria-hidden="true">✓</div>
+        <div>
+          <div class="section-label" style="margin-bottom:10px">Messaging Compliance</div>
+          <h3>A2P 10DLC Registration Approved <span class="a2p-status">✓ Approved</span></h3>
+          <p>Hands-on experience with U.S. business SMS registration in GoHighLevel, including approved A2P brand and campaign registrations.</p>
+          <div class="cert-tags"><span class="ctag ctag-g">Brand Approved</span><span class="ctag ctag-g">Campaign Approved</span><span class="ctag ctag-b">U.S. Business SMS</span></div>
+        </div>
+      </div>
+      <p class="a2p-proof-note">Approval evidence available upon request. Registration approval is account-specific and does not guarantee message delivery.</p>
     </div>
   </div>
 </section>
