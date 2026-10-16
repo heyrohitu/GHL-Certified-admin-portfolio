@@ -1353,8 +1353,29 @@ function dpTrackScroll(id, dir){
   .ai-showcase-cta p{color:#c6d4e7;font-size:15px;line-height:1.6;margin:0}
   .ai-showcase-link{flex-shrink:0;display:inline-flex;gap:12px;align-items:center;justify-content:center;background:#fff;color:#172c4a!important;text-decoration:none!important;padding:14px 19px;border-radius:10px;font-size:14px;font-weight:700}
   .ai-showcase-link:hover{background:#e8f0fa}
-  @media(min-width:769px) and (max-width:1050px){.ai-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}\n  @media(max-width:768px){#voice-ai.ai-showcase{padding:58px 16px!important}.ai-showcase-heading{margin-bottom:27px}.ai-showcase-heading p{font-size:15px}.ai-showcase-grid{grid-template-columns:1fr;gap:15px}.ai-demo-card{padding:13px}.ai-demo-copy{padding:17px 4px 5px}#voice-ai .ai-demo-copy h3{font-size:19px}.ai-demo-preview{padding:15px}.ai-showcase-capabilities{padding:27px 16px}.ai-capability-list span{font-size:12px;padding:10px 11px}.ai-showcase-cta{padding:24px 20px;flex-direction:column;align-items:stretch;text-align:center}#voice-ai .ai-showcase-cta h3{font-size:20px}.ai-showcase-link{width:100%}}
-  @media(prefers-reduced-motion:reduce){#voice-ai *{scroll-behavior:auto!important}}
+  @media(min-width:769px) and (max-width:1050px){.ai-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:768px){#voice-ai.ai-showcase{padding:58px 16px!important}.ai-showcase-heading{margin-bottom:27px}.ai-showcase-heading p{font-size:15px}.ai-showcase-grid{grid-template-columns:1fr;gap:15px}.ai-demo-card{padding:13px}.ai-demo-copy{padding:17px 4px 5px}#voice-ai .ai-demo-copy h3{font-size:19px}.ai-demo-preview{padding:15px}.ai-showcase-capabilities{padding:27px 16px}.ai-capability-list span{font-size:12px;padding:10px 11px}.ai-showcase-cta{padding:24px 20px;flex-direction:column;align-items:stretch;text-align:center}#voice-ai .ai-showcase-cta h3{font-size:20px}.ai-showcase-link{width:100%}}
+  /* Scoped overrides: legacy #voice-ai rules must not turn cards into a horizontal carousel. */
+  #voice-ai.ai-showcase .ai-showcase-inner{width:100%;max-width:1200px;min-width:0;margin-inline:auto}
+  #voice-ai.ai-showcase .ai-showcase-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible!important;gap:18px!important;min-width:0}
+  #voice-ai.ai-showcase .ai-showcase-grid>.ai-demo-card{min-width:0!important;width:auto!important;max-width:100%;background:#fff!important;border:1px solid #dbe3ee!important;box-sizing:border-box}
+  #voice-ai.ai-showcase .ai-demo-preview{width:100%;min-width:0;aspect-ratio:16/9;background:#eef3fa!important;border:1px solid #dce6f4!important;box-sizing:border-box}
+  #voice-ai.ai-showcase .ai-demo-preview iframe{width:100%!important;height:100%!important;display:block}
+  @media(min-width:769px) and (max-width:1050px){#voice-ai.ai-showcase .ai-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+  @media(max-width:768px){
+    #voice-ai.ai-showcase{padding:48px 16px!important;overflow:hidden}
+    #voice-ai.ai-showcase .ai-showcase-heading{max-width:100%;margin-bottom:25px}
+    #voice-ai.ai-showcase .ai-showcase-heading h2{font-size:clamp(27px,7.4vw,36px)!important;line-height:1.16!important;letter-spacing:-.035em;margin-bottom:12px}
+    #voice-ai.ai-showcase .ai-showcase-heading p{font-size:14px!important;line-height:1.6!important;max-width:36ch}
+    #voice-ai.ai-showcase .ai-showcase-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+    #voice-ai.ai-showcase .ai-demo-card{padding:12px!important;border-radius:15px}
+    #voice-ai.ai-showcase .ai-demo-copy{padding:16px 4px 5px}
+    #voice-ai.ai-showcase .ai-demo-copy h3{font-size:19px!important;margin:7px 0 8px}
+    #voice-ai.ai-showcase .ai-demo-copy p{font-size:14px!important;line-height:1.6!important}
+    #voice-ai.ai-showcase .ai-showcase-cta{margin-top:20px;padding:22px 18px;gap:16px}
+    #voice-ai.ai-showcase .ai-showcase-link{box-sizing:border-box}
+  }
+    @media(prefers-reduced-motion:reduce){#voice-ai *{scroll-behavior:auto!important}}
   </style>
 </section>
 
