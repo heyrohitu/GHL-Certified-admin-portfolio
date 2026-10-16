@@ -1251,10 +1251,51 @@ function dpTrackScroll(id, dir){
   </div>
   <style>
     @media (max-width: 768px) {
-      #workflows { padding:64px 20px !important; }
-      #workflows > div > div:nth-child(2) { display:flex !important;grid-template-columns:none !important;overflow-x:auto;overflow-y:hidden;gap:14px !important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent;padding:2px 4px 18px;overscroll-behavior-x:contain; }\n      #workflows > div > div:nth-child(2) > div { flex:0 0 min(78vw,300px);scroll-snap-align:start;min-width:0; }
+      /* One readable workflow card per swipe; no fixed-height grid rows. */
+      #workflows { padding:56px 16px !important; }
+      #workflows > div > div:nth-child(1) { margin-bottom:28px !important; }
+      #workflows > div > div:nth-child(2) {
+        display:flex !important;
+        grid-template-columns:none !important;
+        align-items:flex-start;
+        overflow-x:auto;
+        overflow-y:hidden;
+        gap:14px !important;
+        scroll-snap-type:x mandatory;
+        scroll-padding-inline:2px;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        padding:2px 2px 14px;
+        overscroll-behavior-x:contain;
+      }
+      #workflows > div > div:nth-child(2)::-webkit-scrollbar { display:none; }
+      #workflows > div > div:nth-child(2) > div {
+        flex:0 0 calc(100% - 12px);
+        width:calc(100% - 12px);
+        min-width:0;
+        align-self:flex-start;
+        height:auto;
+        padding:16px !important;
+        scroll-snap-align:start;
+        box-sizing:border-box;
+      }
+      #workflows > div > div:nth-child(2) > div > div:first-child {
+        width:100% !important;
+        aspect-ratio:16/9;
+      }
+      #workflows > div > div:nth-child(2) h3 {
+        font-size:18px !important;
+        line-height:1.35 !important;
+        margin-top:16px !important;
+        overflow-wrap:break-word;
+      }
+      #workflows > div > div:nth-child(2) p {
+        font-size:15px !important;
+        line-height:1.55 !important;
+        overflow-wrap:break-word;
+      }
       #workflows h2 { font-size:30px !important; }
-      #workflows p { font-size:17px !important; }
+      #workflows > div > div:first-child p { font-size:16px !important; line-height:1.6 !important; }
     }
   </style>
 </section>
