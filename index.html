@@ -62,7 +62,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-size:15px;font-weight:500;padding:12px 26px;border-radius:8px;border:1px solid var(--border2);text-decoration:none;transition:border-color .2s,background .2s}
 .btn-outline:hover{border-color:var(--border2);background:var(--off)}
 .photo-frame{width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative;background:var(--off)}
-.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 85%}
 .hero-cert-full{width:100%;background:var(--white);border:1.5px solid rgba(26,107,74,.22);border-radius:16px;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 20px rgba(26,107,74,.08);position:relative;overflow:hidden}
 .hero-cert-full::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#34c98a,rgba(26,107,74,.15))}
 .hcf-left{display:flex;align-items:center;gap:20px}
@@ -533,7 +533,7 @@ section{padding-top:96px;padding-bottom:96px}
 .cta-section h2 em{color:#2455a4}
 .cta-section .section-sub{color:#475569}
 .cta-section .btn-white{background:#2455a4;color:#fff}
-#workflows,#voice-ai,#client-results{display:none!important}
+/* Experiment: previously hidden portfolio sections are now visible. */
 @media(max-width:840px){.hero{padding:48px 0}.hero-top{gap:30px}}
 @media(max-width:520px){.container{padding-left:20px;padding-right:20px}.hero{padding:36px 0 44px}section{padding-top:64px;padding-bottom:64px}.services-grid,.process-steps{gap:12px}}
 
@@ -580,6 +580,102 @@ img{max-width:100%}
 @media(max-width:520px){.container{padding-left:18px;padding-right:18px}.services-grid{grid-template-columns:1fr}.svc-card{padding:24px}.hero-actions{flex-direction:column}.hero-actions a{width:100%;justify-content:center}.dp-track{padding-left:16px;padding-right:16px}.dp-card{flex-basis:calc(100vw - 48px)!important}#cert .cert-section-block{padding:22px 18px}#cert .cert-img{width:112px;height:112px}.booking-modal-head{padding:14px 16px}.booking-modal-body iframe{min-height:450px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-up{opacity:1!important;transform:none!important}}
 
+
+/* Full uploaded logo in experiment header — original aspect ratio preserved */
+.nav-logo-only{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;text-decoration:none;line-height:0}
+.nav-header-logo{display:block;width:230px;height:auto;max-height:52px;object-fit:contain;object-position:left center;flex-shrink:0}
+@media(max-width:1024px){.nav-header-logo{width:195px;max-height:45px}}
+@media(max-width:767px){.nav-header-logo{width:170px;max-height:40px}}
+@media(max-width:380px){.nav-header-logo{width:146px;max-height:34px}}
+
+/* Conversion-focused GHL hero positioning — experiment only */
+.hero .hero-left h1{font-size:clamp(34px,3.65vw,49px);line-height:1.14;letter-spacing:-.038em;max-width:740px;text-wrap:balance;margin-bottom:22px}
+.hero .hero-sub{max-width:650px;line-height:1.7;margin-bottom:30px}
+.hero .hero-actions{align-items:center}
+.hero .hero-actions a{min-height:48px}
+@media(max-width:900px){.hero .hero-left h1{font-size:clamp(32px,5vw,45px)}}
+@media(max-width:520px){.hero .hero-left h1{font-size:clamp(31px,8vw,38px);line-height:1.16;letter-spacing:-.035em}.hero .hero-sub{font-size:16px;line-height:1.65;margin-bottom:25px}.hero .hero-actions{align-items:stretch}}
+
+/* Reduce excess space above mobile hero headline. */
+@media(max-width:767px){
+  .hero{padding-top:16px}
+  .hero .hero-tag{margin-bottom:12px}
+}
+@media(max-width:380px){.hero{padding-top:12px}}
+
+/* Short, readable hero headline for small screens without altering desktop copy */
+.hero-heading-mobile{display:none}
+@media(max-width:767px){
+  .hero-heading-desktop{display:none}
+  .hero-heading-mobile{display:block}
+  .hero .hero-left h1{font-size:clamp(30px,7.5vw,39px);line-height:1.17;letter-spacing:-.035em;text-wrap:balance;max-width:580px;margin-left:auto;margin-right:auto}
+}
+@media(max-width:380px){
+  .hero .hero-left h1{font-size:clamp(28px,7.7vw,31px);line-height:1.19}
+}
+
+/* Polished numbered steps for the experiment process cards */
+.process-steps{align-items:stretch}
+.process-steps .p-step{display:flex;flex-direction:column;align-items:flex-start;height:100%}
+.process-steps .p-num{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;min-width:46px;margin:0 0 22px;padding:0;border-radius:50%;background:#e9f0fb;color:#2355a4;font-family:var(--mono);font-size:15px;font-weight:650;letter-spacing:0;line-height:1;font-variant-numeric:tabular-nums}
+.process-steps .p-title{margin-bottom:12px}
+@media(max-width:767px){.process-steps .p-num{width:42px;height:42px;min-width:42px;margin-bottom:18px;font-size:14px}}
+
+/* Professional hero portrait treatment — experiment only */
+.hero .photo-frame{
+  aspect-ratio:4/5;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#0b182c;
+  box-shadow:0 18px 44px rgba(15,23,42,.13),0 3px 10px rgba(15,23,42,.06);
+}
+.hero .photo-frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 78%;
+}
+.nav-avatar{object-position:center 78%}
+@media(max-width:767px){
+  .hero .photo-frame{border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.12)}
+}
+
+/* Light corporate theme for experimental showcase sections; override legacy inline dark styles */
+#workflows,#voice-ai,#client-results{background:#f8fafc!important;border-top:1px solid #e2e8f0;color:#172033}
+#voice-ai{background:#fff!important}
+#workflows h2,#voice-ai h2,#client-results h2{color:#172033!important;letter-spacing:-.025em}
+#workflows h3,#voice-ai h3,#client-results h3{color:#172033!important}
+#workflows p,#voice-ai p,#client-results p{color:#475569!important;opacity:1!important}
+#workflows > div > div:first-child > div:first-child{color:#2455a4!important}
+#workflows > div > div:nth-child(2) > div,
+#voice-ai > div > div > div,
+#client-results > div > div:nth-child(3) > div{background:#fff!important;border:1px solid #dbe2ea!important;border-radius:12px!important;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+#workflows > div > div:nth-child(2) > div > div:first-child,
+#voice-ai > div > div > div > div:first-child{background:#f1f5f9!important;border:1px dashed #cbd5e1;color:#64748b!important}
+#client-results video{background:#f1f5f9}
+#client-results [style*="color:#fff"]{color:#172033!important}
+#voice-ai > div > div{scrollbar-color:#cbd5e1 transparent!important}
+@media(max-width:768px){#voice-ai > div > div > div{min-width:min(310px,85vw)!important}#workflows,#voice-ai,#client-results{padding:64px 18px!important}}
+
+/* Keep the navigation certification card desktop-only. */
+@media (max-width:1024px){
+  header .nav-cert-badge{display:none!important}
+}
+/* Experiment-only A2P registration proof */
+.a2p-screenshot-link{display:block;margin:24px 0 0 74px;text-decoration:none;color:var(--accent);font-weight:600;font-size:14px}
+.a2p-screenshot-link img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border);box-shadow:0 6px 24px rgba(0,0,0,.07);margin-bottom:10px}
+.a2p-screenshot-link:hover span{text-decoration:underline}
+@media(max-width:768px){.a2p-screenshot-link{margin-left:0}}
+
+.a2p-proof-card{margin-top:18px;padding:28px 32px;border:1px solid rgba(26,107,74,.22);border-radius:16px;background:linear-gradient(125deg,#f3faf6,#fff 72%)}
+.a2p-proof-content{display:flex;align-items:flex-start;gap:20px}
+.a2p-proof-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;flex:0 0 54px;border-radius:15px;background:#d9f4e3;color:#157347;font-size:26px;font-weight:700}
+.a2p-proof-card h3{font-size:21px;line-height:1.45;color:var(--text);margin:0 0 8px;font-weight:650}
+.a2p-proof-card p{font-size:16px;line-height:1.7;color:var(--muted);margin:0 0 16px}
+.a2p-status{display:inline-block;vertical-align:middle;margin-left:8px;padding:4px 10px;border-radius:30px;background:#dcfce7;color:#166534;font-size:12px;font-weight:650;white-space:nowrap}
+.a2p-proof-card .a2p-proof-note{font-size:12px;line-height:1.6;margin:18px 0 0 74px;color:var(--muted)}
+@media(max-width:768px){.a2p-proof-card{padding:22px 18px}.a2p-proof-content{flex-direction:column;gap:14px}.a2p-proof-card h3{font-size:19px}.a2p-status{margin:7px 0 0}.a2p-proof-card .a2p-proof-note{margin-left:0}}
 </style>
 </head>
 <body>
@@ -588,10 +684,9 @@ img{max-width:100%}
 <header>
   <div class="container">
     <nav>
-      <div class="nav-brand">
-        <img class="nav-avatar" src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay">
-        <span class="nav-name">Rohit Upadhyay</span>
-      </div>
+      <a class="nav-brand nav-logo-only" href="#top" aria-label="Rohit Upadhyay — back to top">
+        <img class="nav-header-logo" src="https://raw.githubusercontent.com/heyrohitu/GHL-Certified-admin-portfolio/experiment/images/idnUrjuiFj_logos.png" alt="Rohit Upadhyay brand logo" width="230" height="52">
+      </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
@@ -619,22 +714,22 @@ img{max-width:100%}
   <div class="container">
     <div class="hero-top fade-up">
       <div class="hero-left">
-        <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Expert · Available Now</div>
-        <h1>Hi, I'm <em>Rohit</em> —<br>GHL Certified Admin</h1>
-        <p class="hero-sub">I build <strong>complete business systems</strong> on GoHighLevel — automations, funnels, AI agents, CRM setups and white-label agency solutions that actually work.</p>
+        <div class="hero-tag"><span class="tag-dot"></span>GoHighLevel Certified Admin</div>
+        <h1><span class="hero-heading-desktop">I Build <em>GoHighLevel Systems</em> That Help Businesses Capture, Follow Up With &amp; Book More Leads.</span><span class="hero-heading-mobile">I Build <em>GoHighLevel Systems</em> That Capture Leads &amp; Book Appointments.</span></h1>
+        <p class="hero-sub">I help agencies and service businesses set up <strong>funnels, CRM automations, Conversation AI and Voice AI agents</strong> — connecting lead capture, follow-up and appointment booking into one streamlined system.</p>
         <div class="hero-photo-col hero-photo-mobile">
           <div class="photo-frame">
-            <img src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+            <img src="https://raw.githubusercontent.com/heyrohitu/GHL-Certified-admin-portfolio/experiment/images/IMG_0506%201.png" alt="Rohit Upadhyay — GHL Expert">
           </div>
         </div>
         <div class="hero-actions">
-          <a href="#contact" class="btn-dark">Work With Me →</a>
-          <a href="#services" class="btn-outline">See My Services</a>
+          <a href="#contact" class="btn-dark">Discuss a GHL Project →</a>
+          <a href="#funnels" class="btn-outline">View My Work</a>
         </div>
       </div>
       <div class="hero-photo-col hero-photo-desktop">
         <div class="photo-frame">
-          <img src="/images/DSC_0713%201%20(5)%201.webp" alt="Rohit Upadhyay — GHL Expert">
+          <img src="https://raw.githubusercontent.com/heyrohitu/GHL-Certified-admin-portfolio/experiment/images/IMG_0506%201.png" alt="Rohit Upadhyay — GHL Expert">
         </div>
       </div>
     </div>
@@ -721,6 +816,100 @@ img{max-width:100%}
     </div>
   </div>
 </section>
+
+<!-- WORKFLOWS & ADVANCED AUTOMATIONS -->
+<section id="workflows" style="background:#0a0a0a;padding:80px 20px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:12px;">Automation Systems</div>
+      <h2 style="font-size:clamp(30px,3.5vw,40px);font-weight:600;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:0 0 16px;">Workflows &amp; Advanced Automations</h2>
+      <p style="font-size:19px;line-height:1.75;color:#999;max-width:600px;margin:0 auto;">Strategic GoHighLevel workflows designed to automate lead follow-up, appointments, reviews, and reactivation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/tSLtdlZPD6A" title="Speed to Lead and Automated Follow-Up — GoHighLevel workflow demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Speed to Lead &amp; Automated Follow-Up</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Instant lead engagement with automated SMS, email, and follow-up sequences</p>
+      </div>
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/Ep_a2NviJkw" title="Six-Month Nurture Workflow — GoHighLevel automation demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Six-Month Nurture Workflow</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Automated lead follow-up over 6 months</p>
+      </div>
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/zar7lWPQEzE" title="Missed Call Text-Back and Automated Follow-Up — GoHighLevel workflow demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Missed Call Text-Back &amp; Automated Follow-Up</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Automatically re-engage missed callers through SMS and follow-up workflows</p>
+      </div>
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/WD3aNKAJBNI" title="Appointment Booking Automation — GoHighLevel workflow demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Appointment Booking Automation</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Automated appointment booking and follow-up sequences</p>
+      </div>
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/39udGco-vxo" title="Google Review Automation — GoHighLevel reputation management workflow demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Google Review Automation</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Automated review requests and customer follow-ups to help businesses build their online reputation</p>
+      </div>
+      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/PCDQonX5yM4" title="Website Form to GHL CRM — Webhook Automation demo" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Website Form to GHL CRM — Webhook Automation</h3>
+        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Capture website form submissions, create CRM contacts, and trigger follow-up workflows through webhooks</p>
+      </div>
+    </div>
+    <div class="mobile-swipe-dots" id="workflowSwipeDots" aria-label="Workflow slides"></div>
+  </div>
+  <style>
+    @media (max-width: 768px) {
+      /* One readable workflow card per swipe; no fixed-height grid rows. */
+      #workflows { padding:56px 16px !important; }
+      #workflows > div > div:nth-child(1) { margin-bottom:28px !important; }
+      #workflows > div > div:nth-child(2) {
+        display:flex !important;
+        grid-template-columns:none !important;
+        align-items:flex-start;
+        overflow-x:auto;
+        overflow-y:hidden;
+        gap:14px !important;
+        scroll-snap-type:x mandatory;
+        scroll-padding-inline:2px;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        padding:2px 2px 14px;
+        overscroll-behavior-x:contain;
+      }
+      #workflows > div > div:nth-child(2)::-webkit-scrollbar { display:none; }
+      #workflows > div > div:nth-child(2) > div {
+        flex:0 0 calc(100% - 12px);
+        width:calc(100% - 12px);
+        min-width:0;
+        align-self:flex-start;
+        height:auto;
+        padding:16px !important;
+        scroll-snap-align:start;
+        box-sizing:border-box;
+      }
+      #workflows > div > div:nth-child(2) > div > div:first-child {
+        width:100% !important;
+        aspect-ratio:16/9;
+      }
+      #workflows > div > div:nth-child(2) h3 {
+        font-size:18px !important;
+        line-height:1.35 !important;
+        margin-top:16px !important;
+        overflow-wrap:break-word;
+      }
+      #workflows > div > div:nth-child(2) p {
+        font-size:15px !important;
+        line-height:1.55 !important;
+        overflow-wrap:break-word;
+      }
+      #workflows h2 { font-size:30px !important; }
+      #workflows > div > div:first-child p { font-size:16px !important; line-height:1.6 !important; }
+    }
+  </style>
+</section>
+
 
 <!-- ═══════════════════════════════════════════
      SALES FUNNELS SECTION
@@ -868,42 +1057,6 @@ img{max-width:100%}
   <div class="dp-dots" id="websiteDots"></div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     VOICE AI SECTION
-═══════════════════════════════════════════ -->
-<div class="showcase-section" id="voice-ai">
-  <div class="showcase-inner">
-    <div class="container">
-      <div class="fade-up">
-        <div class="section-label">Voice AI</div>
-        <h2>Voice AI in Action</h2>
-        <p class="section-sub">A real look at how I build and implement Voice AI systems for clients.</p>
-      </div>
-      <div class="video-card fade-up" style="transition-delay:.12s">
-        <a href="https://youtu.be/y8wWEOmiWP8?si=CzBYPcFMHPjcXC0e" target="_blank" class="video-thumb-link">
-          <div class="video-thumb">
-            <img src="https://img.youtube.com/vi/y8wWEOmiWP8/maxresdefault.jpg" 
-                 onerror="this.src='https://img.youtube.com/vi/y8wWEOmiWP8/hqdefault.jpg'"
-                 alt="Voice AI System Build — Live Demo" class="thumb-img">
-            <div class="thumb-overlay">
-              <div class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1a1917"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <span class="thumb-label">Watch on YouTube</span>
-            </div>
-          </div>
-        </a>
-        <div class="video-meta">
-          <div>
-            <div class="video-tag">▶ Work Sample</div>
-            <div class="video-title">Voice AI System Build — Live Demo</div>
-          </div>
-          <a href="https://youtu.be/y8wWEOmiWP8?si=CzBYPcFMHPjcXC0e" target="_blank" class="video-link">Watch on YouTube ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <style>
 /* ══════════════════════════════
@@ -1112,116 +1265,183 @@ function dpTrackScroll(id, dir){
 }
 </script>
 
-<!-- WORKFLOWS & ADVANCED AUTOMATIONS -->
-<section id="workflows" style="background:#0a0a0a;padding:80px 20px;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:48px;">
-      <div style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:12px;">Automation Systems</div>
-      <h2 style="font-size:clamp(30px,3.5vw,40px);font-weight:600;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:0 0 16px;">Workflows &amp; Advanced Automations</h2>
-      <p style="font-size:19px;line-height:1.75;color:#999;max-width:600px;margin:0 auto;">Strategic GoHighLevel workflows designed to automate lead follow-up, appointments, reviews, and reactivation.</p>
+<!-- VOICE AI & CONVERSATION AI SHOWCASE — EXPERIMENT ONLY -->
+<section id="voice-ai" class="ai-showcase" aria-labelledby="ai-showcase-title">
+  <div class="ai-showcase-inner">
+    <div class="ai-showcase-heading">
+      <span class="ai-showcase-eyebrow">AI AUTOMATION SHOWCASE</span>
+      <h2 id="ai-showcase-title">AI Agents That Answer, Qualify &amp; Book</h2>
+      <p>See how AI handles inbound calls, follows up with leads, and turns website conversations into booked appointments.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Lead Nurture Sequence</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Instant SMS, Email, Voicemail follow-up</p>
-      </div>
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Long-Term Nurture (365 Days)</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Stay top of mind for 1 year</p>
-      </div>
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Missed Call Text-Back + AI</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Never lose a lead again</p>
-      </div>
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Appointment Booking + Reminders</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">No-show reduction automation</p>
-      </div>
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Review Request Automation</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Auto Google review collection</p>
-      </div>
-      <div style="background:#151515;border:1px solid #222;border-radius:16px;padding:20px;">
-        <div style="height:180px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono);font-size:12px;letter-spacing:.08em;">WORKFLOW SCREENSHOT PLACEHOLDER</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Re-engagement &amp; Reactivation</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Win back cold leads</p>
-      </div>
+    <div class="ai-showcase-grid">
+      <article class="ai-demo-card">
+        <div class="ai-demo-preview" style="padding:0;overflow:hidden;display:block;"><iframe src="https://www.youtube-nocookie.com/embed/9asUpMwsUzA" title="Inbound Voice AI — GoHighLevel demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block;"></iframe></div>
+        <div class="ai-demo-copy"><span class="ai-demo-type">VOICE AI</span><h3>Inbound Voice AI</h3><p>An AI receptionist that answers incoming calls, handles common questions, qualifies callers and helps schedule appointments.</p><a href="https://youtu.be/9asUpMwsUzA" target="_blank" rel="noopener noreferrer" class="ai-demo-status" style="text-decoration:none;">Watch demo ↗</a></div>
+      </article>
+      <article class="ai-demo-card">
+        <div class="ai-demo-preview" style="padding:0;overflow:hidden;display:block;"><iframe src="https://www.youtube-nocookie.com/embed/o0BPHEtDVLk" title="Outbound Voice AI — GoHighLevel demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block;"></iframe></div>
+        <div class="ai-demo-copy"><span class="ai-demo-type">VOICE AI</span><h3>Outbound Voice AI</h3><p>Follows up with opted-in leads, asks qualifying questions and helps arrange the next step with your team.</p><a href="https://youtu.be/o0BPHEtDVLk" target="_blank" rel="noopener noreferrer" class="ai-demo-status" style="text-decoration:none;">Watch demo ↗</a></div>
+      </article>
+      <article class="ai-demo-card">
+        <div class="ai-demo-preview" style="padding:0;overflow:hidden;display:block;"><iframe src="https://www.youtube-nocookie.com/embed/G0UJBqpg26E" title="Website Conversation AI — GoHighLevel demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block;"></iframe></div>
+        <div class="ai-demo-copy"><span class="ai-demo-type">CONVERSATION AI</span><h3>Website Conversation AI</h3><p>A website assistant that answers service questions, gathers lead details and guides visitors toward booking.</p><a href="https://youtube.com/shorts/G0UJBqpg26E" target="_blank" rel="noopener noreferrer" class="ai-demo-status" style="text-decoration:none;">Watch demo ↗</a></div>
+      </article>
+
     </div>
+
   </div>
   <style>
-    @media (max-width: 768px) {
-      #workflows { padding:64px 20px !important; }
-      #workflows > div > div:last-child { grid-template-columns:1fr !important; }
-      #workflows h2 { font-size:30px !important; }
-      #workflows p { font-size:17px !important; }
-    }
+  #voice-ai.ai-showcase{background:#f8fafc!important;padding:88px 20px!important;color:#172033}
+  .ai-showcase-inner{max-width:1200px;margin:0 auto}
+  .ai-showcase-heading{text-align:center;max-width:1000px;margin:0 auto 36px}
+  .ai-showcase-eyebrow{display:block;color:#3562a5;font-weight:700;font-size:12px;letter-spacing:.13em;margin-bottom:14px}
+  #voice-ai .ai-showcase-heading h2{font-size:clamp(30px,3.5vw,46px);line-height:1.17;letter-spacing:-.035em;color:#172033;margin:0 auto 14px;font-weight:700;max-width:1050px;text-wrap:balance}
+  .ai-showcase-heading p{font-size:16px;line-height:1.65;color:#58677c;margin:0 auto;max-width:760px;text-wrap:pretty}
+  .ai-showcase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+  .ai-demo-card{border:1px solid #dbe3ee;background:#fff;border-radius:18px;padding:16px;min-width:0;box-shadow:0 8px 26px rgba(20,37,60,.035);display:flex;flex-direction:column}
+  .ai-demo-preview{aspect-ratio:16/9;border:1px solid #dce6f4;background:linear-gradient(135deg,#edf3fc,#f7f9fc);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;gap:12px}
+  .ai-demo-symbol{display:grid;place-items:center;border-radius:16px;width:54px;height:54px;background:#dce9fa;color:#285a9f;font-size:30px;font-weight:700}
+  .ai-demo-preview-label{font-size:12px;letter-spacing:.12em;font-weight:700;color:#36567e}
+  .ai-demo-preview-note{font-size:13px;line-height:1.5;color:#60718a}
+  .ai-demo-copy{padding:17px 3px 4px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+  .ai-demo-type{font-size:11px;font-weight:700;letter-spacing:.1em;color:#3562a5}
+  #voice-ai .ai-demo-copy h3{font-size:21px;line-height:1.3;color:#172033;margin:9px 0}
+  .ai-demo-copy p{color:#536277;font-size:15px;line-height:1.6;margin:0 0 16px;flex:1}
+  .ai-demo-status{display:inline-block;background:#f1f5f9;color:#58677c;border:1px solid #e1e8f0;border-radius:100px;padding:8px 12px;font-size:12px;font-weight:600}
+  .ai-showcase-capabilities{text-align:center;margin-top:24px;padding:35px 25px;border:1px solid #dbe3ee;background:#fff;border-radius:18px}
+  #voice-ai .ai-showcase-capabilities h3{color:#172033;font-size:25px;margin:0 0 9px}
+  .ai-showcase-capabilities p{color:#58677c;font-size:15px;line-height:1.6;margin:0 auto 23px;max-width:620px}
+  .ai-capability-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .ai-capability-list span{border-radius:9px;border:1px solid #d9e4f1;background:#f8fafc;color:#304b70;padding:11px 14px;font-size:13px;font-weight:600}
+  .ai-showcase-cta{margin-top:24px;padding:40px 48px;border-radius:18px;background:#172c4a;display:flex;align-items:center;justify-content:space-between;gap:32px}
+  #voice-ai .ai-showcase-cta>div:first-child{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;min-width:0;flex:1}
+  #voice-ai .ai-showcase-cta>div:first-child h3{background:transparent!important;display:block;max-width:none;padding:0!important;margin:0 0 12px!important;line-height:1.3}
+  #voice-ai .ai-showcase-cta>div:first-child p{background:transparent!important;padding:0!important;margin:0!important;max-width:670px;line-height:1.7}
+  #voice-ai .ai-showcase-cta .ai-showcase-link{margin:0;white-space:nowrap}
+  @media(max-width:768px){#voice-ai .ai-showcase-cta{padding:30px 22px!important;gap:22px!important}#voice-ai .ai-showcase-cta>div:first-child h3{font-size:20px!important;margin-bottom:12px!important}#voice-ai .ai-showcase-cta>div:first-child p{font-size:14px!important;line-height:1.65!important}#voice-ai .ai-showcase-cta .ai-showcase-link{white-space:normal;padding:15px 12px!important}}
+  #voice-ai .ai-showcase-cta h3{font-size:23px;color:#fff;margin:0 0 9px}
+  .ai-showcase-cta p{color:#c6d4e7;font-size:15px;line-height:1.6;margin:0}
+  .ai-showcase-link{flex-shrink:0;display:inline-flex;gap:12px;align-items:center;justify-content:center;background:#fff;color:#172c4a!important;text-decoration:none!important;padding:14px 19px;border-radius:10px;font-size:14px;font-weight:700}
+  .ai-showcase-link:hover{background:#e8f0fa}
+  @media(min-width:769px) and (max-width:1050px){.ai-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:768px){#voice-ai.ai-showcase{padding:58px 16px!important}.ai-showcase-heading{margin-bottom:27px}.ai-showcase-heading p{font-size:15px}.ai-showcase-grid{grid-template-columns:1fr;gap:15px}.ai-demo-card{padding:13px}.ai-demo-copy{padding:17px 4px 5px}#voice-ai .ai-demo-copy h3{font-size:19px}.ai-demo-preview{padding:15px}.ai-showcase-capabilities{padding:27px 16px}.ai-capability-list span{font-size:12px;padding:10px 11px}.ai-showcase-cta{padding:24px 20px;flex-direction:column;align-items:stretch;text-align:center}#voice-ai .ai-showcase-cta h3{font-size:20px}.ai-showcase-link{width:100%}}
+  /* Scoped overrides: legacy #voice-ai rules must not turn cards into a horizontal carousel. */
+  #voice-ai.ai-showcase .ai-showcase-inner{width:100%;max-width:1200px;min-width:0;margin-inline:auto}
+  #voice-ai.ai-showcase .ai-showcase-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible!important;gap:18px!important;min-width:0}
+  #voice-ai.ai-showcase .ai-showcase-grid>.ai-demo-card{min-width:0!important;width:auto!important;max-width:100%;background:#fff!important;border:1px solid #dbe3ee!important;box-sizing:border-box}
+  #voice-ai.ai-showcase .ai-demo-preview{width:100%;min-width:0;aspect-ratio:16/9;background:#eef3fa!important;border:1px solid #dce6f4!important;box-sizing:border-box}
+  #voice-ai.ai-showcase .ai-demo-preview iframe{width:100%!important;height:100%!important;display:block}
+  @media(min-width:769px) and (max-width:1050px){#voice-ai.ai-showcase .ai-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+  @media(max-width:768px){
+    #voice-ai.ai-showcase{padding:48px 16px!important;overflow:hidden}
+    #voice-ai.ai-showcase .ai-showcase-heading{max-width:100%;margin-bottom:25px}
+    #voice-ai.ai-showcase .ai-showcase-heading h2{font-size:clamp(27px,7.4vw,36px)!important;line-height:1.16!important;letter-spacing:-.035em;margin-bottom:12px}
+    #voice-ai.ai-showcase .ai-showcase-heading p{font-size:14px!important;line-height:1.6!important;max-width:36ch}
+    #voice-ai.ai-showcase .ai-showcase-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+    #voice-ai.ai-showcase .ai-demo-card{padding:12px!important;border-radius:15px}
+    #voice-ai.ai-showcase .ai-demo-copy{padding:16px 4px 5px}
+    #voice-ai.ai-showcase .ai-demo-copy h3{font-size:19px!important;margin:7px 0 8px}
+    #voice-ai.ai-showcase .ai-demo-copy p{font-size:14px!important;line-height:1.6!important}
+    #voice-ai.ai-showcase .ai-showcase-cta{margin-top:20px;padding:22px 18px;gap:16px}
+    #voice-ai.ai-showcase .ai-showcase-link{box-sizing:border-box}
+  }
+    /* AI CTA: force legible contrast despite legacy global heading styles */
+  #voice-ai.ai-showcase .ai-showcase-cta{background:#172c4a!important;border-radius:20px!important;padding:40px 48px!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:36px!important;text-align:left!important}
+  #voice-ai.ai-showcase .ai-showcase-cta>div:first-child{flex:1 1 auto!important;min-width:0!important;background:none!important;border:0!important;padding:0!important}
+  #voice-ai.ai-showcase .ai-showcase-cta>div:first-child h3{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;font-size:clamp(22px,2vw,28px)!important;font-weight:700!important;line-height:1.3!important;margin:0 0 12px!important}
+  #voice-ai.ai-showcase .ai-showcase-cta>div:first-child p{color:#d2dfef!important;-webkit-text-fill-color:#d2dfef!important;opacity:1!important;font-size:16px!important;line-height:1.6!important;margin:0!important}
+  #voice-ai.ai-showcase .ai-showcase-cta .ai-showcase-link{width:auto!important;flex:0 0 auto!important;min-height:52px;white-space:nowrap!important;padding:15px 22px!important;text-align:center!important}
+  @media(max-width:768px){#voice-ai.ai-showcase .ai-showcase-cta{padding:28px 22px!important;flex-direction:column!important;align-items:stretch!important;gap:22px!important;text-align:center!important}#voice-ai.ai-showcase .ai-showcase-cta>div:first-child h3{font-size:21px!important;margin-bottom:10px!important}#voice-ai.ai-showcase .ai-showcase-cta>div:first-child p{font-size:14px!important}#voice-ai.ai-showcase .ai-showcase-cta .ai-showcase-link{width:100%!important;white-space:normal!important;box-sizing:border-box!important}}
+    @media(prefers-reduced-motion:reduce){#voice-ai *{scroll-behavior:auto!important}}
   </style>
 </section>
 
-<!-- VOICE AI & CONVERSATION AI SECTION -->
-<section id="voice-ai" style="background:#0a0a0a;padding:80px 20px;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <h2 style="text-align:center;font-size:42px;line-height:1.15;font-weight:600;letter-spacing:-.025em;color:#fff;margin:0 0 48px;">Voice AI &amp; Conversation AI in Action</h2>
-
-    <div style="display:flex;gap:20px;overflow-x:auto;padding:4px 2px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#333 transparent;">
-      <div style="min-width:350px;background:#151515;border:1px solid #222;border-radius:16px;padding:20px;scroll-snap-align:start;transition:transform .2s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='scale(1)'">
-        <div style="height:200px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;">VOICE AI INBOUND VIDEO</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Inbound Voice AI</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Answers calls, books appointments 24/7</p>
-      </div>
-
-      <div style="min-width:350px;background:#151515;border:1px solid #222;border-radius:16px;padding:20px;scroll-snap-align:start;transition:transform .2s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='scale(1)'">
-        <div style="height:200px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;">VOICE AI OUTBOUND VIDEO</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Outbound Voice AI</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Follows up with cold leads automatically</p>
-      </div>
-
-      <div style="min-width:350px;background:#151515;border:1px solid #222;border-radius:16px;padding:20px;scroll-snap-align:start;transition:transform .2s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='scale(1)'">
-        <div style="height:200px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;">CONVERSATION AI CHAT VIDEO</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">Conversation AI - Website</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Chat widget that books meetings</p>
-      </div>
-
-      <div style="min-width:350px;background:#151515;border:1px solid #222;border-radius:16px;padding:20px;scroll-snap-align:start;transition:transform .2s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='scale(1)'">
-        <div style="height:200px;background:#222;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777;font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;">WHATSAPP AI VIDEO</div>
-        <h3 style="margin:20px 0 8px;color:#fff;font-size:18px;line-height:1.35;font-weight:600;">WhatsApp AI</h3>
-        <p style="margin:0;color:#999;font-size:15px;line-height:1.65;">Auto replies &amp; booking on WhatsApp</p>
-      </div>
+<!-- CLIENT RESULTS -->
+<section id="client-results" aria-labelledby="client-results-title">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Client Feedback</div>
+      <h2 id="client-results-title">Client Results</h2>
+      <p class="section-sub">Video feedback shared by clients. Watch their experiences below.</p>
     </div>
+    <div class="client-video-grid" aria-label="Client feedback videos">
+      <article class="client-video-card">
+        <div class="client-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/emVfiIzLkCM?rel=0" title="Client feedback video one" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="client-video-info">
+          <h3>Client Feedback — Video 01</h3>
+        </div>
+      </article>
+      <article class="client-video-card">
+        <div class="client-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/35x3DLhGlRI?rel=0" title="Client feedback video two" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="client-video-info">
+          <h3>Client Feedback — Video 02</h3>
+        </div>
+      </article>
+    </div>
+    <div class="mobile-swipe-dots" id="clientSwipeDots" aria-label="Client video slides"></div>
   </div>
 </section>
-
-<!-- CLIENT RESULTS -->
-<section id="client-results" style="background:#0a0a0a;padding:80px 20px;">
-<div style="max-width:1200px;margin:0 auto;">
-<h2 style="text-align:center;font-size:42px;color:#fff;margin:0 0 12px;">Client Results</h2>
-<p style="text-align:center;color:#fff;opacity:.7;font-size:18px;margin:0 0 48px;">Real feedback from real clients</p>
-<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_1"><source src="VIDEO_LINK_1" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_2"><source src="VIDEO_LINK_2" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-<div style="background:#151515;border:1px solid #222;border-radius:16px;overflow:hidden;">
-<video width="100%" height="350" style="width:100%;height:350px;object-fit:cover;display:block;" controls muted loop playsinline poster="THUMBNAIL_3"><source src="VIDEO_LINK_3" type="video/mp4"></video>
-<div style="padding:16px;color:#fff;"><b style="display:block;margin-bottom:6px;">Client Name</b><p style="margin:0;opacity:.7;">Result - e.g. 3x more bookings in 30 days</p></div>
-</div>
-</div>
-</div>
 <style>
-#client-results > div > div:last-child > div{transition:transform .2s ease;}
-#client-results > div > div:last-child > div:hover{transform:scale(1.02);}
-@media(max-width:768px){#client-results{padding:64px 20px!important;}#client-results h2{font-size:34px!important;}#client-results > div > div:last-child{grid-template-columns:1fr!important;}}
+#client-results{padding:88px 0!important;background:#f8fafc!important;border-top:1px solid #e2e8f0}
+#client-results .client-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:start;gap:18px;margin-top:28px}
+#client-results .client-video-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #dbe2ea;border-radius:12px;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+#client-results .client-video-frame{width:100%;aspect-ratio:9/16;max-height:560px;background:#f1f5f9;display:flex;justify-content:center}
+#client-results .client-video-frame iframe{display:block;width:100%;height:100%;border:0}
+
+#client-results .client-video-info{padding:20px 22px}
+#client-results .client-video-info h3{font-size:18px;line-height:1.4;color:#172033;margin:0 0 10px}
+#client-results .client-video-info a{font-size:14px;color:#2455a4;text-decoration:none}
+#client-results .client-video-info a:hover{text-decoration:underline}
+@media(max-width:720px){#client-results{padding:64px 0!important}#client-results .client-video-grid{display:flex;overflow-x:auto;overflow-y:hidden;gap:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent;padding:2px 18px 16px;margin-left:-18px;margin-right:-18px;overscroll-behavior-x:contain}#client-results .client-video-card{flex:0 0 min(78vw,300px);scroll-snap-align:start}#client-results .client-video-frame{max-height:none}#client-results .client-video-info{padding:14px 16px}#client-results .client-video-info h3{font-size:15px}}
 </style>
-</section>
+
+
+<style>
+.mobile-swipe-dots{display:none;align-items:center;justify-content:center;gap:9px;margin:20px auto 0}
+.mobile-swipe-dots button{appearance:none;border:0;border-radius:50%;background:#cbd5e1;width:9px;height:9px;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+.mobile-swipe-dots button[aria-current="true"]{background:#2455a4;transform:scale(1.12)}
+@media(max-width:768px){.mobile-swipe-dots{display:flex}}
+.mobile-swipe-dots.always-swipe-dots{display:flex}
+</style>
+<script>
+(function(){
+  function setupSwipeDots(sectionId, dotsId, cardSelector){
+    const section=document.getElementById(sectionId);
+    const dots=document.getElementById(dotsId);
+    if(!section||!dots)return;
+    const selectors={workflows:'div[style*="grid-template-columns:repeat(3"]','client-results':'.client-video-grid','voice-ai':'div[style*="scroll-snap-type:x mandatory"]'};
+    const track=section.querySelector(selectors[sectionId]);
+    if(!track)return;
+    const cards=Array.from(track.querySelectorAll(cardSelector));
+    if(!cards.length)return;
+    cards.forEach((card,index)=>{
+      const dot=document.createElement('button');
+      dot.type='button';
+      dot.setAttribute('aria-label','Go to slide '+(index+1));
+      dot.addEventListener('click',()=>track.scrollTo({left:card.offsetLeft-cards[0].offsetLeft,behavior:'smooth'}));
+      dots.appendChild(dot);
+    });
+    function sync(){
+      let nearest=0,dist=Infinity;
+      cards.forEach((card,index)=>{
+        const d=Math.abs(card.getBoundingClientRect().left-track.getBoundingClientRect().left);
+        if(d<dist){dist=d;nearest=index}
+      });
+      Array.from(dots.children).forEach((dot,index)=>dot.setAttribute('aria-current',index===nearest?'true':'false'));
+    }
+    track.addEventListener('scroll',sync,{passive:true});
+    window.addEventListener('resize',sync);
+    sync();
+  }
+  setupSwipeDots('workflows','workflowSwipeDots',':scope > div');
+  setupSwipeDots('client-results','clientSwipeDots',':scope > article');
+  setupSwipeDots('voice-ai','voiceSwipeDots',':scope > div');
+})();
+</script>
 
 <!-- CERTIFICATION -->
 <section id="cert">
@@ -1245,6 +1465,21 @@ function dpTrackScroll(id, dir){
         </div>
       </div>
     </div>
+    <div class="a2p-proof-card fade-up" style="transition-delay:.16s">
+      <div class="a2p-proof-content">
+        <div class="a2p-proof-icon" aria-hidden="true">✓</div>
+        <div>
+          <div class="section-label" style="margin-bottom:10px">Messaging Compliance</div>
+          <h3>A2P 10DLC Registration Approved <span class="a2p-status">✓ Approved</span></h3>
+          <p>Hands-on experience with U.S. business SMS registration in GoHighLevel, including approved A2P brand and campaign registrations.</p>
+          <div class="cert-tags"><span class="ctag ctag-g">Brand Approved</span><span class="ctag ctag-g">Campaign Approved</span><span class="ctag ctag-b">U.S. Business SMS</span></div>
+        </div>
+      </div>
+      <a class="a2p-screenshot-link" href="/images/A2P%20Approved.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size GoHighLevel A2P registration approval screenshot">
+        <img src="/images/A2P%20Approved.png" alt="GoHighLevel A2P Messaging brand and campaign registration statuses both approved" loading="lazy" decoding="async">
+      </a>
+      <p class="a2p-proof-note">Approval evidence available upon request. Registration approval is account-specific and does not guarantee message delivery.</p>
+    </div>
   </div>
 </section>
 
@@ -1257,10 +1492,10 @@ function dpTrackScroll(id, dir){
       <p class="section-sub">A clear, structured approach — so you always know what's happening and why.</p>
     </div>
     <div class="process-steps fade-up" style="transition-delay:.1s">
-      <div class="p-step"><div class="p-num">01 /</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
-      <div class="p-step"><div class="p-num">02 /</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
-      <div class="p-step"><div class="p-num">03 /</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
-      <div class="p-step"><div class="p-num">04 /</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 1">01</div><div class="p-title">Discovery Call</div><div class="p-desc">I learn your business goals, current tools and pain points to design the right solution.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 2">02</div><div class="p-title">System Design</div><div class="p-desc">I map your complete GHL architecture — CRM structure, automation flows and integrations.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 3">03</div><div class="p-title">Build &amp; Configure</div><div class="p-desc">I build everything — funnels, workflows, AI agents, email sequences and all integrations.</div></div>
+      <div class="p-step"><div class="p-num" aria-label="Step 4">04</div><div class="p-title">Launch &amp; Handoff</div><div class="p-desc">QA every flow, train your team, document everything and support you through go-live.</div></div>
     </div>
   </div>
 </section>
